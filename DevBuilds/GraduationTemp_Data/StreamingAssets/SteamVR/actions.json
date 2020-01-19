@@ -85,6 +85,14 @@
       "name": "/actions/mixedreality/in/ExternalCamera",
       "type": "pose",
       "requirement": "optional"
+    },
+    {
+      "name": "/actions/Shooter/in/HoldWeapon",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/Shooter/in/Shoot",
+      "type": "boolean"
     }
   ],
   "action_sets": [
@@ -102,6 +110,10 @@
     },
     {
       "name": "/actions/mixedreality",
+      "usage": "single"
+    },
+    {
+      "name": "/actions/Shooter",
       "usage": "single"
     }
   ],
@@ -170,7 +182,9 @@
       "/actions/platformer/in/Jump": "Jump",
       "/actions/default/in/SnapTurnLeft": "Snap Turn (Left)",
       "/actions/default/in/SnapTurnRight": "Snap Turn (Right)",
-      "/actions/default/in/TouchPad": "TouchPad"
+      "/actions/default/in/TouchPad": "TouchPad",
+      "/actions/Shooter/in/HoldWeapon": "HoldWeapon",
+      "/actions/Shooter/in/Shoot": "Shoot"
     }
   ]
 }
