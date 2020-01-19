@@ -18,25 +18,18 @@ public class VRWalking : MonoBehaviour
     private float speed = 0.0f;
 
     private CharacterController characterController;
-    private Transform cameraRig = null;
-    private Transform head = null;
+    public Transform head = null;
 
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
     }
 
-    private void Start()
-    {
-        cameraRig = SteamVR_Render.Top().origin;
-        head = SteamVR_Render.Top().head;
-    }
-
     private void Update()
     {
         HandleHeight();
         CalculateMovement();
-        //SnapRotation();
+        SnapRotation();
     }
 
     private void HandleHeight()
@@ -94,17 +87,20 @@ public class VRWalking : MonoBehaviour
 
     private void SnapRotation()
     {
+        
         float snapValue = 0f;
 
         //move right
         if (MoveValue.axis.x > 0.8 && MovePress.GetStateDown(SteamVR_Input_Sources.Any))
         {
+            Debug.Log("Rotating");
             snapValue = Mathf.Abs(RotateIncrement);
         }
 
         //move left
         if (MoveValue.axis.x < -0.8 && MovePress.GetStateDown(SteamVR_Input_Sources.Any))
         {
+            Debug.Log("Rotating");
             snapValue = -Mathf.Abs(RotateIncrement);
         }
 
