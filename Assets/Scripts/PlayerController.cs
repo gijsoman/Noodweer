@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveDirection = transform.position + speed * Time.deltaTime * new Vector3(input.axis.x, 0, input.axis.y);
+        transform.position += speed * Time.deltaTime * new Vector3(input.axis.x, 0, input.axis.y);
     }
 
     
