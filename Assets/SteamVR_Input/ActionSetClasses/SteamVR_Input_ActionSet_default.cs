@@ -120,7 +120,5 @@ namespace Valve.VR
                 return SteamVR_Actions.default_Haptic;
             }
         }
-
-        public object MovementAxis { get; set; }
     }
 }
