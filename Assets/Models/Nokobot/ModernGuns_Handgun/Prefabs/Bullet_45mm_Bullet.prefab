@@ -54,6 +54,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -89,7 +90,7 @@ GameObject:
   - component: {fileID: 4617562620070314}
   - component: {fileID: 54754061181521972}
   - component: {fileID: 135553686393699058}
-  - component: {fileID: 3407748985794774873}
+  - component: {fileID: 79067472278568540}
   m_Layer: 8
   m_Name: Bullet_45mm_Bullet
   m_TagString: Untagged
@@ -141,7 +142,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.02
   m_Center: {x: 0, y: 0, z: 0.04}
---- !u!114 &3407748985794774873
+--- !u!114 &79067472278568540
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,7 +151,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1900734910723676}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78a38155e4c18734891c0efd440b6eca, type: 3}
+  m_Script: {fileID: 11500000, guid: c7c157a0f9179d746bf8d6cf39158edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BulletForce: 10000

@@ -17,10 +17,13 @@ public class Shootable : MonoBehaviour
         if (Shoot != null && Shoot.GetStateDown(hand.handType))
         {
             Vector3 forward = EndOfBarrel.transform.TransformDirection(Vector3.right) * 10;
-            //ObjectPooler.Instance.SpawnFromPool("Bullet", EndOfBarrel.position, Quaternion.LookRotation(forward));
-            GameObject tempFlash;
-            tempFlash = Instantiate(muzzleFlashPrefab, EndOfBarrel.position, Quaternion.LookRotation(forward));
-            Destroy(tempFlash, 0.5f);
+            ObjectPooler.Instance.SpawnFromPool("Bullet", EndOfBarrel.position, Quaternion.LookRotation(forward));
+            if (muzzleFlashPrefab != null)
+            {
+                GameObject tempFlash;
+                tempFlash = Instantiate(muzzleFlashPrefab, EndOfBarrel.position, Quaternion.LookRotation(forward));
+                Destroy(tempFlash, 0.5f);
+            }
         }
     }
 
