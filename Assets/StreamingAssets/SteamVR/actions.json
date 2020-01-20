@@ -54,6 +54,10 @@
       "type": "vector2"
     },
     {
+      "name": "/actions/default/in/TrackPadSnapTurnValue",
+      "type": "vector2"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },
@@ -184,7 +188,8 @@
       "/actions/default/in/SnapTurnRight": "Snap Turn (Right)",
       "/actions/default/in/TouchPad": "TouchPad",
       "/actions/Shooter/in/HoldWeapon": "HoldWeapon",
-      "/actions/Shooter/in/Shoot": "Shoot"
+      "/actions/Shooter/in/Shoot": "Shoot",
+      "/actions/default/in/TrackPadSnapTurnValue": "TrackPadSnapTurnValue"
     }
   ]
 }

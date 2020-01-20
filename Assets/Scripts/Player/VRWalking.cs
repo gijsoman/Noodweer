@@ -13,6 +13,8 @@ public class VRWalking : MonoBehaviour
 
     //public SteamVR_Action_Boolean RotatePress = null;
     public SteamVR_Action_Boolean MovePress = null;
+    public SteamVR_Action_Vector2 TracPadValue = null;
+
     public SteamVR_Action_Vector2 MoveValue = null;
 
     private float speed = 0.0f;
@@ -91,14 +93,14 @@ public class VRWalking : MonoBehaviour
         float snapValue = 0f;
 
         //move right
-        if (MoveValue.axis.x > 0.8 && MovePress.GetStateDown(SteamVR_Input_Sources.Any))
+        if (TracPadValue.axis.x > 0.8 && MovePress.GetStateDown(SteamVR_Input_Sources.Any))
         {
             Debug.Log("Rotating");
             snapValue = Mathf.Abs(RotateIncrement);
         }
 
         //move left
-        if (MoveValue.axis.x < -0.8 && MovePress.GetStateDown(SteamVR_Input_Sources.Any))
+        if (TracPadValue.axis.x < -0.8 && MovePress.GetStateDown(SteamVR_Input_Sources.Any))
         {
             Debug.Log("Rotating");
             snapValue = -Mathf.Abs(RotateIncrement);
