@@ -573,10 +573,20 @@ PrefabInstance:
       propertyPath: m_DynamicOccludee
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5112229828176064832, guid: 96a3369cd8c9dd7419ec7e0e82db414e,
+        type: 3}
+      propertyPath: m_StitchLightmapSeams
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7710389884520254509, guid: 96a3369cd8c9dd7419ec7e0e82db414e,
         type: 3}
       propertyPath: m_Name
       value: ResidentialBuilding_B_snaps004
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710389884520254509, guid: 96a3369cd8c9dd7419ec7e0e82db414e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2886608010396901162, guid: 96a3369cd8c9dd7419ec7e0e82db414e, type: 3}
