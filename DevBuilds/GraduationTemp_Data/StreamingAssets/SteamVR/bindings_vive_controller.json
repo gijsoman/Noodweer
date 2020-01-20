@@ -197,6 +197,9 @@
             },
             {
                "inputs" : {
+                  "click" : {
+                     "output" : "/actions/default/in/teleport"
+                  },
                   "position" : {
                      "output" : "/actions/default/in/touchpad"
                   }
@@ -206,9 +209,6 @@
             },
             {
                "inputs" : {
-                  "click" : {
-                     "output" : "/actions/default/in/teleport"
-                  },
                   "position" : {
                      "output" : "/actions/default/in/trackpadsnapturnvalue"
                   }
