@@ -2088,13 +2088,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 1.5
+  m_Radius: 0.25
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.75, z: 0}
 --- !u!4 &671199020
 Transform:
   m_ObjectHideFlags: 0
@@ -2198,6 +2198,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: a641b75fe73c21a43a21d218788e93e6, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 8977f2b7459b2b7418cd232e0bb3d185,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4964426168678133720, guid: 8977f2b7459b2b7418cd232e0bb3d185,
         type: 3}
       propertyPath: m_Layer
@@ -2216,7 +2221,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8977f2b7459b2b7418cd232e0bb3d185,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00000011920929
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8977f2b7459b2b7418cd232e0bb3d185,
         type: 3}
@@ -2281,7 +2286,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 8977f2b7459b2b7418cd232e0bb3d185,
         type: 3}
       propertyPath: m_Name
-      value: BaseCharacter
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 8977f2b7459b2b7418cd232e0bb3d185,
         type: 3}
@@ -5560,7 +5565,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
