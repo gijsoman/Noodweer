@@ -8,8 +8,8 @@
 //			SteamVR_Fade.Start with the desired color and duration.
 //			Use a duration of zero to set the start color.
 //
-// Example:	Fade down from black over one second.
-//			SteamVR_Fade.Start(Color.black, 0);
+// Example:	Fover one second.
+//			SteamVR_Fade.Start(Color.black, 0);ade down from black 
 //			SteamVR_Fade.Start(Color.clear, 1);
 //
 // Note:	This component is provided to fade out a single camera layer's
