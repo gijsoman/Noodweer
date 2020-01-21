@@ -21,9 +21,11 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        Vertical = Input.GetAxis("Vertical");
-
-        Move();
+        if (!GameManager.Instance.introPlaying)
+        {
+            Vertical = Input.GetAxis("Vertical");
+            Move();
+        }
     }
 
     private void FixedUpdate()
