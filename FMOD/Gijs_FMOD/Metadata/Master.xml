@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="MixerMaster" id="{e74c82aa-6a4a-4725-89ac-dcf358fcb1ab}">
+		<property name="name">
+			<value>Master Bus</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{4fc72bfa-8d12-4cfe-89e0-68d049720cc3}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{88327093-4b59-41b6-88c3-915783229729}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{c7b2b0a5-61d2-45c3-a595-e3e2465c2e9b}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{4fc72bfa-8d12-4cfe-89e0-68d049720cc3}">
+		<relationship name="effects">
+			<destination>{ad611015-8cf8-4fb4-aba0-b1b041b66420}</destination>
+			<destination>{350716fc-4f5f-48d3-bf8e-b100948f1b30}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{88327093-4b59-41b6-88c3-915783229729}">
+		<property name="overridingOutputFormat">
+			<value>2</value>
+		</property>
+		<property name="outputFormatOverridden">
+			<value>true</value>
+		</property>
+	</object>
+	<object class="MixerBusFader" id="{ad611015-8cf8-4fb4-aba0-b1b041b66420}" />
+	<object class="PluginEffect" id="{350716fc-4f5f-48d3-bf8e-b100948f1b30}">
+		<relationship name="plugin">
+			<destination>{d781c4c7-f221-4c35-8651-70b2aadabd2a}</destination>
+		</relationship>
+	</object>
+	<object class="Plugin" id="{d781c4c7-f221-4c35-8651-70b2aadabd2a}">
+		<property name="identifier">
+			<value>Resonance Audio Listener</value>
+		</property>
+		<relationship name="pluginParameters">
+			<destination>{de2968e1-e557-495b-a681-6cc1dc23c814}</destination>
+			<destination>{0f4ff656-6917-4a2e-b50b-dcbd7e1a60b5}</destination>
+		</relationship>
+	</object>
+	<object class="FloatPluginParameter" id="{de2968e1-e557-495b-a681-6cc1dc23c814}">
+		<property name="name">
+			<value>Gain</value>
+		</property>
+		<property name="value">
+			<value>-9.99999975e-06</value>
+		</property>
+		<property name="curve">
+			<value>{(0.000000,-80.000000)(1.000000,0.000000)}</value>
+		</property>
+	</object>
+	<object class="DataPluginParameter" id="{0f4ff656-6917-4a2e-b50b-dcbd7e1a60b5}">
+		<property name="name">
+			<value>Room Properties</value>
+		</property>
+		<property name="value" />
+		<property name="dataType">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
