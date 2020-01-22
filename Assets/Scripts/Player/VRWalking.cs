@@ -30,7 +30,7 @@ public class VRWalking : MonoBehaviour
     private void Update()
     {
         //HandleHeight();
-        if (!GameManager.Instance.introPlaying)
+        if (!GameManager.Instance.IntroPlaying)
         {
             CalculateMovement();
             SnapRotation();

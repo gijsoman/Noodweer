@@ -30,7 +30,7 @@ public class Wieldable : MonoBehaviour
     {
         GrabTypes startingGrabType = hand.GetGrabStarting();
 
-        if (startingGrabType == GrabTypes.Grip && !GameManager.Instance.introPlaying)
+        if (startingGrabType == GrabTypes.Grip && !GameManager.Instance.IntroPlaying)
         {
             OnAttachObject?.Invoke();
             hand.AttachObject(gameObject, startingGrabType, attachmentFlags, attachmentOffset);

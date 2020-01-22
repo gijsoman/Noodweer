@@ -21,7 +21,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.Instance.introPlaying)
+        if (!GameManager.Instance.IntroPlaying)
         {
             Vertical = Input.GetAxis("Vertical");
             Move();
