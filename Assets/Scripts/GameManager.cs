@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public bool IntroPlaying = false;
     public bool PlayIntro = true;
     public StudioEventEmitter PoliceIntroEventEmitter;
+
+    public EnemyScript Enemy;
     public float SlowDownFactor = 0.05f;
     public float SlowDownLength = 2f;
 
@@ -30,6 +32,13 @@ public class GameManager : MonoBehaviour
             SteamVR_Fade.View(Color.black, 0);
             IntroPlaying = true;
         }
+        else
+        {
+            IntroPlaying = false;
+        }
+
+        if (Enemy != null)
+            Enemy.IDied += DoSlowMotion;
     }
 
     private void Update()
@@ -57,7 +66,13 @@ public class GameManager : MonoBehaviour
     private void DoSlowMotion()
     {
         Time.timeScale = SlowDownFactor;
+        SteamVR_Fade.View(Color.white, 0);
+        SteamVR_Fade.View(Color.clear, 5);
     }
 
-    
+    private void OnDestroy()
+    {
+        Enemy.IDied -= DoSlowMotion;
+    }
+
 }
