@@ -44,9 +44,28 @@ public class Shootable : MonoBehaviour
             }
 
             //Set the shoot sound event and play it
-            
-            normalShoot.start();
-            normalShoot.release();
+            //if we are not going to hit the enemy do the normal shoot sound. Ohterwise we play the death one.
+            RaycastHit hit;
+            Ray ray = new Ray(EndOfBarrel.position, forward);
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.gameObject.layer == 9)
+                {
+                    deathShoot.start();
+                    deathShoot.release();
+                }
+                else
+                {
+                    normalShoot.start();
+                    normalShoot.release();
+                }
+            }
+            else
+            {
+                normalShoot.start();
+                normalShoot.release();
+            }
         }
     }
 }
