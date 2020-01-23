@@ -12,22 +12,8 @@ public class Shootable : MonoBehaviour
     public Transform EndOfBarrel;
     public GameObject muzzleFlashPrefab;
 
-    [EventRef]
-    public string ShootSound = "";
-    FMOD.Studio.EventInstance normalShoot;
-
-    [EventRef]
-    public string ShootDeath = "";
-    FMOD.Studio.EventInstance deathShoot;
-
-    private void Awake()
-    {
-        normalShoot = RuntimeManager.CreateInstance(ShootSound);
-        normalShoot.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
-
-        deathShoot = RuntimeManager.CreateInstance(ShootDeath);
-        deathShoot.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
-    }
+    public StudioEventEmitter shootEmitter;
+    public StudioEventEmitter shootDeathEmitter;
 
     private void HandAttachedUpdate(Hand hand)
     {
@@ -52,19 +38,16 @@ public class Shootable : MonoBehaviour
             {
                 if (hit.collider.gameObject.layer == 9)
                 {
-                    deathShoot.start();
-                    deathShoot.release();
+                    shootDeathEmitter.Play();
                 }
                 else
                 {
-                    normalShoot.start();
-                    normalShoot.release();
+                    shootEmitter.Play();
                 }
             }
             else
             {
-                normalShoot.start();
-                normalShoot.release();
+                shootEmitter.Play();
             }
         }
     }

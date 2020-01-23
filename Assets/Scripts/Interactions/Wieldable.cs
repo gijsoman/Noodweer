@@ -40,9 +40,9 @@ public class Wieldable : MonoBehaviour
 
     private void HandAttachedUpdate(Hand hand)
     {
-        GrabTypes endingGrabType = hand.GetGrabEnding();
+        GrabTypes startingGrabType = hand.GetGrabStarting();
 
-        if (endingGrabType == GrabTypes.Grip)
+        if (startingGrabType == GrabTypes.Grip)
         {
             hand.DetachObject(gameObject, false);
             rb.velocity = Vector3.zero;

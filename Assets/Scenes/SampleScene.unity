@@ -6184,7 +6184,8 @@ MonoBehaviour:
     actionPath: /actions/Shooter/in/Shoot
     needsReinit: 0
   EndOfBarrel: {fileID: 928453233}
-  muzzleFlashPrefab: {fileID: 0}
+  muzzleFlashPrefab: {fileID: 1782395880954752, guid: e802c9c5b472d2345a808aca4bc81014,
+    type: 3}
   ShootSound: event:/Weapons/Gun_Shot
   ShootDeath: event:/Weapons/Gun_Kill
 --- !u!1 &1959262919
