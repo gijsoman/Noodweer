@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: event:/Weapons/Gun_Kill
   guid: 6260f17c8b663d44aa9a8e747e51a86a
   Banks:
-  - {fileID: -3672095230508051103}
+  - {fileID: 2756527039552733621}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -40,7 +40,7 @@ MonoBehaviour:
   lastModified: 637153071333698521
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-698962807637782248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55,7 +55,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/Gijs_FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637153071333723312
+  lastModified: 637153763658184160
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -75,17 +75,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -698962807637782248}
-  - {fileID: -3672095230508051103}
+  - {fileID: 2756527039552733621}
   EditorEvents:
   - {fileID: 2990376973922415135}
   - {fileID: 435692140417497498}
   - {fileID: -7058070485587128043}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -3672095230508051103}
+  - {fileID: 2756527039552733621}
   StringsBanks:
   - {fileID: -698962807637782248}
-  stringsBankWriteTime: 637153071333723312
+  stringsBankWriteTime: 637153763658184160
   cacheVersion: 3
 --- !u!114 &435692140417497498
 MonoBehaviour:
@@ -102,7 +102,7 @@ MonoBehaviour:
   Path: event:/Weapons/Gun_Shot
   guid: 20512c74d2e1e940b8cf8de93f9846a4
   Banks:
-  - {fileID: -3672095230508051103}
+  - {fileID: 2756527039552733621}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -110,6 +110,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2981
+--- !u!114 &2756527039552733621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Gijs_FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637153763658114403
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &2990376973922415135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +143,7 @@ MonoBehaviour:
   Path: event:/Ambience/Intro_Police
   guid: 5997eed83a6f4948affdc72e02e9d40a
   Banks:
-  - {fileID: -3672095230508051103}
+  - {fileID: 2756527039552733621}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0

@@ -74,6 +74,5 @@ public class ObjectPooler : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         Bullet.SetActive(false);
-        Debug.Log("BulletDeactivated");
     }
 }
