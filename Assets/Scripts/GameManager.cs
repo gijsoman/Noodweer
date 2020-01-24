@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = SlowDownFactor;
         SteamVR_Fade.View(Color.red, 0);
-        SteamVR_Fade.View(Color.clear, 5);
+        SteamVR_Fade.View(Color.clear, 10);
     }
 
     private void OnDestroy()
