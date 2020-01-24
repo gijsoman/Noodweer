@@ -2721,7 +2721,7 @@ PrefabInstance:
     - target: {fileID: 7137661249469979564, guid: 8977f2b7459b2b7418cd232e0bb3d185,
         type: 3}
       propertyPath: m_ReceiveShadows
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7137661249469979564, guid: 8977f2b7459b2b7418cd232e0bb3d185,
         type: 3}
@@ -2816,7 +2816,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 4294967295
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -6020,7 +6020,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.25
-  m_Height: 1.9
+  m_Height: 1.87
   m_Direction: 1
   m_Center: {x: 0, y: 0.95, z: 0}
 --- !u!54 &1799174833
@@ -6780,6 +6780,8 @@ MonoBehaviour:
   Enemy: {fileID: 1799174834}
   SlowDownFactor: 0.5
   SlowDownLength: 2
+  enemyDied: 0
+  playerDied: 0
 --- !u!4 &1971788016
 Transform:
   m_ObjectHideFlags: 0
