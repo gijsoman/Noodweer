@@ -9,7 +9,7 @@ public class EnemyScript : MonoBehaviour
 
     private bool alive = true;
     private Animator anim;
-    private bool PlayerInRange = false;
+    public bool PlayerInRange = false;
 
     private void Start()
     {
@@ -20,10 +20,14 @@ public class EnemyScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            anim.SetTrigger("Stab");
-            if (PlayerInRange)
-                IStabbed?.Invoke();            
+            anim.SetTrigger("Stab");        
         }
+    }
+
+    public void InvokePlayerDeath()
+    {
+        if (PlayerInRange)
+            IStabbed?.Invoke();            
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -42,6 +46,7 @@ public class EnemyScript : MonoBehaviour
         if (other.gameObject.name == "VRPlayer")
             PlayerInRange = true;
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.name == "VRPlayer")
