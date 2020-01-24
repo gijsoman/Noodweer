@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: event:/Weapons/Gun_Kill
   guid: 6260f17c8b663d44aa9a8e747e51a86a
   Banks:
-  - {fileID: 2756527039552733621}
+  - {fileID: 8052293042711135868}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -23,6 +23,98 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 15002
+--- !u!114 &-5905910580789868800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice_lines/Godverdomme
+  m_EditorClassIdentifier: 
+  Path: event:/Voice_lines/Godverdomme
+  guid: 83f9d761beb8184dab6d3c14e0f04f04
+  Banks:
+  - {fileID: 8052293042711135868}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5012
+--- !u!114 &-5565235297174312102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice_lines/Ik_Wil_Geen_Hulp
+  m_EditorClassIdentifier: 
+  Path: event:/Voice_lines/Ik_Wil_Geen_Hulp
+  guid: 4aefc5daa6c76f46addaafd0c60f8376
+  Banks:
+  - {fileID: 8052293042711135868}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4057
+--- !u!114 &-5548705253303005238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice_lines/Schiet_Godverdomme
+  m_EditorClassIdentifier: 
+  Path: event:/Voice_lines/Schiet_Godverdomme
+  guid: 05df9750f22fa341a471dc4bfb636f17
+  Banks:
+  - {fileID: 8052293042711135868}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3911
+--- !u!114 &-4298813213899941339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice_lines/Ik_Wil_Niet_Meer
+  m_EditorClassIdentifier: 
+  Path: event:/Voice_lines/Ik_Wil_Niet_Meer
+  guid: a563d62093a6f549841822a27feaf5c3
+  Banks:
+  - {fileID: 8052293042711135868}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5012
 --- !u!114 &-3672095230508051103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,6 +133,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-1978785761911830181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice_lines/Ja_Precies
+  m_EditorClassIdentifier: 
+  Path: event:/Voice_lines/Ja_Precies
+  guid: 5a5bb042a69f174aa6de1224b82adb03
+  Banks:
+  - {fileID: 8052293042711135868}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5012
 --- !u!114 &-698962807637782248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55,12 +170,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/Gijs_FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637153763658184160
+  lastModified: 637154681135061750
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 852
+    Value: 1534
   Exists: 1
+--- !u!114 &-185286600367764856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice_lines/Schiet
+  m_EditorClassIdentifier: 
+  Path: event:/Voice_lines/Schiet
+  guid: c0e7d8b0f4d35f4a8a65a934f45f2f45
+  Banks:
+  - {fileID: 8052293042711135868}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4730
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,17 +213,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -698962807637782248}
-  - {fileID: 2756527039552733621}
+  - {fileID: 8052293042711135868}
   EditorEvents:
   - {fileID: 2990376973922415135}
   - {fileID: 435692140417497498}
   - {fileID: -7058070485587128043}
+  - {fileID: -5548705253303005238}
+  - {fileID: 2789752499742177581}
+  - {fileID: 4624596431226659046}
+  - {fileID: 5265317367947670613}
+  - {fileID: -5565235297174312102}
+  - {fileID: -1978785761911830181}
+  - {fileID: 4132372703089558538}
+  - {fileID: 7530866162228817225}
+  - {fileID: -5905910580789868800}
+  - {fileID: 536968884507451772}
+  - {fileID: -4298813213899941339}
+  - {fileID: 5887632335727340436}
+  - {fileID: -185286600367764856}
+  - {fileID: 6845572888889872168}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 2756527039552733621}
+  - {fileID: 8052293042711135868}
   StringsBanks:
   - {fileID: -698962807637782248}
-  stringsBankWriteTime: 637153763658184160
+  stringsBankWriteTime: 637154681135061750
   cacheVersion: 3
 --- !u!114 &435692140417497498
 MonoBehaviour:
@@ -102,7 +254,7 @@ MonoBehaviour:
   Path: event:/Weapons/Gun_Shot
   guid: 20512c74d2e1e940b8cf8de93f9846a4
   Banks:
-  - {fileID: 2756527039552733621}
+  - {fileID: 8052293042711135868}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -110,6 +262,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2981
+--- !u!114 &536968884507451772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/Stabbed
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/Stabbed
+  guid: 9a4656f7780def4ab480579ef58d27fe
+  Banks:
+  - {fileID: 8052293042711135868}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 11515
 --- !u!114 &2756527039552733621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +302,30 @@ MonoBehaviour:
   lastModified: 637153763658114403
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
+--- !u!114 &2789752499742177581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice_lines/Kom_Dan
+  m_EditorClassIdentifier: 
+  Path: event:/Voice_lines/Kom_Dan
+  guid: 1d0b93a0aeea20468473c916e67d3778
+  Banks:
+  - {fileID: 8052293042711135868}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 558
 --- !u!114 &2990376973922415135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,14 +341,14 @@ MonoBehaviour:
   Path: event:/Ambience/Intro_Police
   guid: 5997eed83a6f4948affdc72e02e9d40a
   Banks:
-  - {fileID: 2756527039552733621}
+  - {fileID: 8052293042711135868}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 163521
+  Length: 147937
 --- !u!114 &3565875476519870581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,3 +367,159 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &4132372703089558538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice_lines/Mik_Hier
+  m_EditorClassIdentifier: 
+  Path: event:/Voice_lines/Mik_Hier
+  guid: 6d2807ea8f3fc94ab5b9217e083f82c2
+  Banks:
+  - {fileID: 8052293042711135868}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 770
+--- !u!114 &4624596431226659046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice_lines/Werk_Mee
+  m_EditorClassIdentifier: 
+  Path: event:/Voice_lines/Werk_Mee
+  guid: 213c661f008053439bc3172015699cef
+  Banks:
+  - {fileID: 8052293042711135868}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5012
+--- !u!114 &5265317367947670613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice_lines/Je_Durft_Niet
+  m_EditorClassIdentifier: 
+  Path: event:/Voice_lines/Je_Durft_Niet
+  guid: 398b63681bbc4344833e892a0087d52c
+  Banks:
+  - {fileID: 8052293042711135868}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4521
+--- !u!114 &5887632335727340436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice_lines/Frustratie
+  m_EditorClassIdentifier: 
+  Path: event:/Voice_lines/Frustratie
+  guid: bb07c5617ad20948a113512f84711a00
+  Banks:
+  - {fileID: 8052293042711135868}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2261
+--- !u!114 &6845572888889872168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice_lines/Schiet_Dan
+  m_EditorClassIdentifier: 
+  Path: event:/Voice_lines/Schiet_Dan
+  guid: fb595cf86c808c49a91e28e29de138ca
+  Banks:
+  - {fileID: 8052293042711135868}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2673
+--- !u!114 &7530866162228817225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice_lines/Nee_Schiet
+  m_EditorClassIdentifier: 
+  Path: event:/Voice_lines/Nee_Schiet
+  guid: 78a2cf6af087b441b38fde28a0eb1030
+  Banks:
+  - {fileID: 8052293042711135868}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5012
+--- !u!114 &8052293042711135868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Gijs_FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637154681135017109
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
