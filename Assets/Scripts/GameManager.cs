@@ -38,7 +38,10 @@ public class GameManager : MonoBehaviour
         }
 
         if (Enemy != null)
-            Enemy.IDied += DoSlowMotion;
+        {
+            Enemy.IDied += EnemyKilledSequence;
+            Enemy.IStabbed += PlayerKilledSequence;
+        }
     }
 
     private void Update()
@@ -63,16 +66,24 @@ public class GameManager : MonoBehaviour
         SteamVR_Fade.View(Color.clear, 1);
     }
 
-    private void DoSlowMotion()
+    private void EnemyKilledSequence()
     {
         Time.timeScale = SlowDownFactor;
         SteamVR_Fade.View(Color.white, 0);
         SteamVR_Fade.View(Color.clear, 5);
     }
 
+    private void PlayerKilledSequence()
+    {
+        Time.timeScale = SlowDownFactor;
+        SteamVR_Fade.View(Color.red, 0);
+        SteamVR_Fade.View(Color.clear, 5);
+    }
+
     private void OnDestroy()
     {
-        Enemy.IDied -= DoSlowMotion;
+        Enemy.IDied -= EnemyKilledSequence;
+        Enemy.IStabbed -= PlayerKilledSequence;
     }
 
 }

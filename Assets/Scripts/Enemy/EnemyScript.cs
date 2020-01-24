@@ -5,13 +5,25 @@ public class EnemyScript : MonoBehaviour
 {
     public delegate void EnemyEvent();
     public EnemyEvent IDied;
+    public EnemyEvent IStabbed;
 
     private bool alive = true;
     private Animator anim;
+    private bool PlayerInRange = false;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            anim.SetTrigger("Stab");
+            if (PlayerInRange)
+                IStabbed?.Invoke();            
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -23,6 +35,17 @@ public class EnemyScript : MonoBehaviour
             alive = false;
             IDied?.Invoke();
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "VRPlayer")
+            PlayerInRange = true;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.name == "VRPlayer")
+            PlayerInRange = false;
     }
 
     private void OnDestroy()
