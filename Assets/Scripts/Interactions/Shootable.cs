@@ -18,7 +18,7 @@ public class Shootable : MonoBehaviour
     private void HandAttachedUpdate(Hand hand)
     {
         
-        if (Shoot != null && Shoot.GetStateDown(hand.handType))
+        if (Shoot != null && Shoot.GetStateDown(hand.handType) && !GameManager.Instance.enemyDied && !GameManager.Instance.playerDied)
         {            
             Vector3 forward = EndOfBarrel.transform.TransformDirection(Vector3.right) * 10;
             ObjectPooler.Instance.SpawnFromPool("Bullet", EndOfBarrel.position, Quaternion.LookRotation(forward));

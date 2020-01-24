@@ -26,13 +26,13 @@ public class EnemyScript : MonoBehaviour
 
     public void InvokePlayerDeath()
     {
-        if (PlayerInRange)
+        if (PlayerInRange && !GameManager.Instance.playerDied && !GameManager.Instance.enemyDied)
             IStabbed?.Invoke();            
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "Bullet_45mm_Bullet(Clone)")
+        if(collision.gameObject.name == "Bullet_45mm_Bullet(Clone)" && !GameManager.Instance.playerDied && !GameManager.Instance.enemyDied)
         {
             if(alive)
                 anim.SetTrigger("Death");

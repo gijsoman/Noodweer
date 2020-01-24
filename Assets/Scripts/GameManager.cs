@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     public float SlowDownFactor = 0.05f;
     public float SlowDownLength = 2f;
 
+    public bool enemyDied = false;
+    public bool playerDied = false;
     private bool FadedIn = false;
 
     private void Start()
@@ -68,6 +70,7 @@ public class GameManager : MonoBehaviour
 
     private void EnemyKilledSequence()
     {
+        enemyDied = true;
         Time.timeScale = SlowDownFactor;
         SteamVR_Fade.View(Color.white, 0);
         SteamVR_Fade.View(Color.clear, 5);
@@ -75,9 +78,10 @@ public class GameManager : MonoBehaviour
 
     private void PlayerKilledSequence()
     {
+        playerDied = true;
         Time.timeScale = SlowDownFactor;
         SteamVR_Fade.View(Color.red, 0);
-        SteamVR_Fade.View(Color.clear, 10);
+        SteamVR_Fade.View(Color.clear, 10);        
     }
 
     private void OnDestroy()
