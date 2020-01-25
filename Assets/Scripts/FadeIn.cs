@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(CanvasRenderer))]
 public class FadeIn : MonoBehaviour
 {
     public FadeIn NextFadeIn;
@@ -11,29 +10,51 @@ public class FadeIn : MonoBehaviour
     public bool FadeInOnStart = false;
 
     private CanvasRenderer canvasRenderer;
+    private CanvasGroup canvasGroup;
 
     private void Start()
     {
         canvasRenderer = GetComponent<CanvasRenderer>();
-        canvasRenderer.SetAlpha(0);
+
+        if (canvasRenderer == null)
+        {
+            //if there is no canvasrenderer we expect a canvasgroup
+            canvasGroup = GetComponent<CanvasGroup>();
+            if (canvasGroup == null)
+            {
+                Debug.LogWarning("You need to have at least a canvasrender or a canvasgroup attached to this gameobject");
+                return;
+            }
+            canvasGroup.alpha = 0;           
+        }
+        else
+        {
+            canvasRenderer.SetAlpha(0);
+        }
+
         if (FadeInOnStart)
             DoFadeIn();
     }
 
     public void DoFadeIn()
     {
-        StartCoroutine(Fade());
+        if (canvasRenderer != null || canvasGroup != null)
+            StartCoroutine(Fade());
+        else
+            Debug.LogWarning("No canvasRenderer or canvasGroup attatched.");
     }
 
     public IEnumerator Fade()
     {
-        Debug.Log("Fading");
         float counter = 0;
 
         while (counter < FadeDuration)
         {
             counter += Time.deltaTime;
-            canvasRenderer.SetAlpha(Mathf.Lerp(canvasRenderer.GetAlpha(), 1, counter / FadeDuration));
+            if (canvasRenderer != null)
+                canvasRenderer.SetAlpha(Mathf.Lerp(canvasRenderer.GetAlpha(), 1, counter / FadeDuration));
+            else if (canvasGroup != null)
+                canvasGroup.alpha = Mathf.Lerp(canvasGroup.alpha, 1, counter / FadeDuration);
 
             yield return null;
         }
