@@ -12,8 +12,11 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
     #endregion
+
+    public GameObject VRplayer;
 
     public bool IntroPlaying = false;
     public bool PlayIntro = true;
@@ -25,6 +28,11 @@ public class GameManager : MonoBehaviour
 
     public bool enemyDied = false;
     public bool playerDied = false;
+    public int enemyDiedFadeLength = 5;
+    public int playerDiedFadeLength = 5;
+
+    public GameObject SceneSwitcher;
+
     private bool FadedIn = false;
 
     private void Start()
@@ -54,6 +62,11 @@ public class GameManager : MonoBehaviour
             FadeToClear();
             IntroPlaying = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            SceneSwitcher.SetActive(true);
+        }
     }
 
     private int PoliceIntroPlaybackPosition()
@@ -73,7 +86,8 @@ public class GameManager : MonoBehaviour
         enemyDied = true;
         Time.timeScale = SlowDownFactor;
         SteamVR_Fade.View(Color.white, 0);
-        SteamVR_Fade.View(Color.clear, 5);
+        SteamVR_Fade.View(Color.clear, enemyDiedFadeLength);
+        StartCoroutine(WaitForFade(enemyDiedFadeLength));
     }
 
     private void PlayerKilledSequence()
@@ -81,7 +95,19 @@ public class GameManager : MonoBehaviour
         playerDied = true;
         Time.timeScale = SlowDownFactor;
         SteamVR_Fade.View(Color.red, 0);
-        SteamVR_Fade.View(Color.clear, 10);        
+        SteamVR_Fade.View(Color.clear, playerDiedFadeLength);
+        StartCoroutine(WaitForFade(playerDiedFadeLength));
+    }
+
+    IEnumerator WaitForFade(int _fadeToWaitFor)
+    {
+        yield return new WaitForSeconds(_fadeToWaitFor);        
+        SceneSwitcher.SetActive(true);
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        Debug.Log("GELADEN!");
     }
 
     private void OnDestroy()
