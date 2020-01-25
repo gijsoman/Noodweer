@@ -21,7 +21,6 @@ public class HolsterSlot : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         vrPositioned = true;
-        Debug.Log("vrPositioned");
     }
 
     public void HolsterItem()

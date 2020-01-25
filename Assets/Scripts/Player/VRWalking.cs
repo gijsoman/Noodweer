@@ -25,6 +25,7 @@ public class VRWalking : MonoBehaviour
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        transform.position = Vector3.zero;
     }
 
     private void Update()

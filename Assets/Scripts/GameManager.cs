@@ -107,7 +107,10 @@ public class GameManager : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
-        Debug.Log("GELADEN!");
+        VRplayer.GetComponent<CharacterController>().enabled = false;
+        VRplayer.GetComponent<VRWalking>().enabled = false;
+        VRplayer.transform.position = new Vector3(0, VRplayer.transform.position.y, 0);
+        VRplayer.transform.eulerAngles = new Vector3(0, 0, 0);
     }
 
     private void OnDestroy()
