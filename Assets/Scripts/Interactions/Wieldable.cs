@@ -21,6 +21,8 @@ public class Wieldable : MonoBehaviour
     [HideInInspector]
     public Rigidbody rb;
 
+    public bool allowedToWield = true;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -30,7 +32,7 @@ public class Wieldable : MonoBehaviour
     {
         GrabTypes startingGrabType = hand.GetGrabStarting();
 
-        if (startingGrabType == GrabTypes.Grip && !GameManager.Instance.IntroPlaying)
+        if (startingGrabType == GrabTypes.Grip && allowedToWield)
         {
             OnAttachObject?.Invoke();
             hand.AttachObject(gameObject, startingGrabType, attachmentFlags, attachmentOffset);

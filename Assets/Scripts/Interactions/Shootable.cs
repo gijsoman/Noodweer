@@ -13,10 +13,13 @@ public class Shootable : MonoBehaviour
     public StudioEventEmitter shootEmitter;
     public StudioEventEmitter shootDeathEmitter;
 
+    public bool allowedToShoot = true;
+
     private void HandAttachedUpdate(Hand hand)
     {        
-        if (Shoot != null && Shoot.GetStateDown(hand.handType) && !GameManager.Instance.playerDied)
-        {            
+        if (Shoot != null && Shoot.GetStateDown(hand.handType) && allowedToShoot)
+        {
+            Debug.Log("Shooting");
             Vector3 forward = EndOfBarrel.transform.TransformDirection(Vector3.right) * 10;
             ObjectPooler.Instance.SpawnFromPool("Bullet", EndOfBarrel.position, Quaternion.LookRotation(forward));
             if (muzzleFlashPrefab != null)

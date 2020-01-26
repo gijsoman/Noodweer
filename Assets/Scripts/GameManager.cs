@@ -32,13 +32,19 @@ public class GameManager : MonoBehaviour
     public int playerDiedFadeLength = 5;
 
     public GameObject SceneSwitcher;
+    private Wieldable HandGunWield;
+    private Shootable HandGunShootable;
 
     private bool FadedIn = false;
 
     private void Start()
     {
+        HandGunWield = GameObject.Find("Handgun").GetComponent<Wieldable>();
+        HandGunShootable = GameObject.Find("Handgun").GetComponent<Shootable>();
         if (PlayIntro)
         {
+            HandGunWield.allowedToWield = false;
+            HandGunShootable.allowedToShoot = false;
             SteamVR_Fade.View(Color.black, 0);
             IntroPlaying = true;
         }
@@ -62,6 +68,8 @@ public class GameManager : MonoBehaviour
             FadeToClear();
             IntroPlaying = false;
             VRplayer.GetComponent<VRWalking>().enabled = true;
+            HandGunWield.allowedToWield = true;
+            HandGunShootable.allowedToShoot = true;
         }
 
         if (Input.GetKeyDown(KeyCode.N))
