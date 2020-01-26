@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using FMODUnity;
 
 [RequireComponent(typeof(Animator))]
 public class EnemyScript : MonoBehaviour
@@ -6,6 +7,7 @@ public class EnemyScript : MonoBehaviour
     public delegate void EnemyEvent();
     public EnemyEvent IDied;
     public EnemyEvent IStabbed;
+    public StudioEventEmitter PlayerStabbed;
 
     private bool alive = true;
     private Animator anim;
@@ -27,7 +29,10 @@ public class EnemyScript : MonoBehaviour
     public void InvokePlayerDeath()
     {
         if (PlayerInRange && !GameManager.Instance.playerDied && !GameManager.Instance.enemyDied)
-            IStabbed?.Invoke();            
+        {
+            PlayerStabbed.Play();
+            IStabbed?.Invoke();
+        }
     }
 
     public void DoDie()

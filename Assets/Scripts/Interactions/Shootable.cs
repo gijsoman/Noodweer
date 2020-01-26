@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Valve.VR.InteractionSystem;
 using Valve.VR;
 using FMODUnity;
@@ -16,9 +14,8 @@ public class Shootable : MonoBehaviour
     public StudioEventEmitter shootDeathEmitter;
 
     private void HandAttachedUpdate(Hand hand)
-    {
-        
-        if (Shoot != null && Shoot.GetStateDown(hand.handType) && !GameManager.Instance.enemyDied && !GameManager.Instance.playerDied)
+    {        
+        if (Shoot != null && Shoot.GetStateDown(hand.handType) && !GameManager.Instance.playerDied)
         {            
             Vector3 forward = EndOfBarrel.transform.TransformDirection(Vector3.right) * 10;
             ObjectPooler.Instance.SpawnFromPool("Bullet", EndOfBarrel.position, Quaternion.LookRotation(forward));
@@ -32,11 +29,10 @@ public class Shootable : MonoBehaviour
             //Set the shoot sound event and play it
             //if we are not going to hit the enemy do the normal shoot sound. Ohterwise we play the death one.
             RaycastHit hit;
-            Ray ray = new Ray(EndOfBarrel.position, forward);
-
+            Ray ray = new Ray(EndOfBarrel.position, forward);    
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.gameObject.layer == 9)
+                if (hit.collider.gameObject.layer == 9 && !GameManager.Instance.enemyDied)
                 {
                     shootDeathEmitter.Play();
                     hit.collider.gameObject.GetComponent<EnemyScript>().DoDie();

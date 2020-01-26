@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     public bool IntroPlaying = false;
     public bool PlayIntro = true;
-    public StudioEventEmitter PoliceIntroEventEmitter;
+    public StudioEventEmitter PoliceIntroEventEmitter;    
 
     public EnemyScript Enemy;
     public float SlowDownFactor = 0.05f;

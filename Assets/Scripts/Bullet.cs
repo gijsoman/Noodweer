@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour, IPooledObject
 
     public void OnObjectSpawned()
     {
+        DontDestroyOnLoad(gameObject);
         rb = GetComponent<Rigidbody>();
         ResetRigidBody();
         rb.AddForce(transform.forward * BulletForce);

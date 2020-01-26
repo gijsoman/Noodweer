@@ -18,6 +18,7 @@ public class ObjectPooler : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
     #endregion
 
