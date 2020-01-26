@@ -5471,14 +5471,14 @@ MonoBehaviour:
   Sensitivity: 0.1
   MaxSpeed: 2
   RotateIncrement: 45
-  MovePress:
-    actionPath: /actions/default/in/Teleport
-    needsReinit: 0
-  TracPadValue:
-    actionPath: /actions/default/in/TouchPad
-    needsReinit: 0
   MoveValue:
     actionPath: /actions/default/in/TouchPad
+    needsReinit: 0
+  EastPress:
+    actionPath: /actions/default/in/SnapTurnRight
+    needsReinit: 0
+  WestPress:
+    actionPath: /actions/default/in/SnapTurnLeft
     needsReinit: 0
   head: {fileID: 1298158907}
   walkState: 0
