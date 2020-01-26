@@ -110,25 +110,12 @@ public class GameManager : MonoBehaviour
         //reset the vrplayer to the center.
         if (level == 1)
         {
+            Time.timeScale = 1;
             VRplayer.GetComponent<CharacterController>().enabled = false;
             VRplayer.GetComponent<VRWalking>().enabled = false;
             VRplayer.transform.position = new Vector3(0, VRplayer.transform.position.y, 0);
             VRplayer.transform.eulerAngles = new Vector3(0, 0, 0);
-
-            if (enemyDied)
-            {
-                GameObject.Find("EndScreenEnemyDied").SetActive(true);
-                GameObject.Find("BaseCharacterWon").SetActive(true);
-            }
-
-            if (playerDied)
-            {
-                GameObject.Find("EndScreenPlayerDied").SetActive(true);
-                GameObject.Find("BaseCharacterWon").SetActive(true);
-            }
         }
-
-
     }
 
     private void OnDestroy()

@@ -769,7 +769,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 8977f2b7459b2b7418cd232e0bb3d185,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7137661249469979564, guid: 8977f2b7459b2b7418cd232e0bb3d185,
         type: 3}
@@ -3019,6 +3019,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1197501533}
   m_CullTransparentMesh: 0
+--- !u!1 &1219732110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1219732112}
+  - component: {fileID: 1219732111}
+  m_Layer: 0
+  m_Name: EndscreenManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1219732111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219732110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fbf503b524c80345a15a821b8015369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1219732112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219732110}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.20023653, y: 3.304568, z: 10.354417}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1259346027
 GameObject:
   m_ObjectHideFlags: 0
@@ -3037,7 +3080,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1259346028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3872,7 +3915,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1507043921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5507,7 +5550,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 8977f2b7459b2b7418cd232e0bb3d185,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7137661249469979564, guid: 8977f2b7459b2b7418cd232e0bb3d185,
         type: 3}
