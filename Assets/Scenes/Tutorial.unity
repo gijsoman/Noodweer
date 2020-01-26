@@ -10617,6 +10617,10 @@ PrefabInstance:
       propertyPath: autoSetWithControllerRangeOfMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1000012112852726, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114000010547881750, guid: dc06161b6d97feb419f45f03b62e14b9,
         type: 3}
       propertyPath: snapAngle
@@ -10644,6 +10648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11450526, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+    - {fileID: 8194540, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
 --- !u!4 &1298158907 stripped
 Transform:

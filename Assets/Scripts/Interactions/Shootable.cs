@@ -37,7 +37,7 @@ public class Shootable : MonoBehaviour
             {
                 if (hit.collider.gameObject.layer == 9 && !GameManager.Instance.enemyDied)
                 {
-                    shootDeathEmitter.Play();
+                    shootDeathEmitter.Play();                    
                     hit.collider.gameObject.GetComponent<EnemyScript>().DoDie();
                 }
                 else
