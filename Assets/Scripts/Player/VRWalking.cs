@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 
+public enum walkingState
+{
+    Idle,
+    Walking,
+}
+
 [RequireComponent(typeof(CharacterController))]
 public class VRWalking : MonoBehaviour
 {
@@ -22,6 +28,9 @@ public class VRWalking : MonoBehaviour
     private CharacterController characterController;
     public Transform head = null;
 
+    public walkingState walkState;
+
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
@@ -30,27 +39,17 @@ public class VRWalking : MonoBehaviour
 
     private void Update()
     {
-        CalculateMovement();
+        if (TracPadValue.changed)
+        {
+            CalculateMovement();
+            walkState = walkingState.Walking;
+        }
+        else
+        {
+            walkState = walkingState.Idle;
+        }
+
         SnapRotation();
-    }
-
-    private void HandleHeight()
-    {
-        //get the head in local space
-        float headHeight = Mathf.Clamp(head.localPosition.y, 1, 2);
-        characterController.height = headHeight;
-
-        //cut in half
-        Vector3 newCenter = Vector3.zero;
-        newCenter.y = characterController.height / 2;
-        newCenter.y += characterController.skinWidth;
-
-        //Move capsule in local space
-        newCenter.x = head.localPosition.x;
-        newCenter.z = head.localPosition.z;
-
-        //apply
-        characterController.center = newCenter;
     }
 
     private void CalculateMovement()

@@ -1535,6 +1535,55 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &90906517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 90906519}
+  - component: {fileID: 90906518}
+  m_Layer: 0
+  m_Name: TutorialManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &90906518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90906517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834771e5a5df67b40a7b6df89d080200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHand: {fileID: 311985459}
+  rightHand: {fileID: 1267564423}
+  WalkingAction:
+    actionPath: /actions/default/in/TouchPad
+    needsReinit: 0
+  VrWalking: {fileID: 659092757}
+--- !u!4 &90906519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90906517}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.6408253, y: -4.038265, z: 4.5059714}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &101387160
 GameObject:
   m_ObjectHideFlags: 0
@@ -2893,6 +2942,18 @@ Transform:
   m_Father: {fileID: 1532121397}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &311985459 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11450312, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1298158906}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e3e4511966ba94d8ba0b98c6c62f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &316412612
 Mesh:
   m_ObjectHideFlags: 0
@@ -5420,6 +5481,7 @@ MonoBehaviour:
     actionPath: /actions/default/in/TouchPad
     needsReinit: 0
   head: {fileID: 1298158907}
+  walkState: 0
 --- !u!143 &659092758
 CharacterController:
   m_ObjectHideFlags: 0
@@ -10440,6 +10502,18 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1267564423 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11401046, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1298158906}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e3e4511966ba94d8ba0b98c6c62f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1298158906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10521,6 +10595,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8194540, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489144, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: autoSetWithControllerRangeOfMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11494192, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: autoSetWithControllerRangeOfMotion
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114000010547881750, guid: dc06161b6d97feb419f45f03b62e14b9,
@@ -11215,8 +11297,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444041526}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: -0, z: 12.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5326804, y: -1, z: 12.917833}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 461772514}
@@ -11237,8 +11319,8 @@ Transform:
   - {fileID: 790708534}
   - {fileID: 2045870708}
   - {fileID: 1459666656}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1949077971}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1444041531
 BoxCollider:
@@ -14172,11 +14254,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949077970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.46731964, y: 1.0276217, z: -0.41783315}
+  m_LocalPosition: {x: -0.46731964, y: 0.928, z: -0.41783315}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 810096013}
   - {fileID: 1532121397}
+  - {fileID: 1444041530}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
