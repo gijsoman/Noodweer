@@ -42,7 +42,7 @@ public class Shootable : MonoBehaviour
                 }
                 else
                 {
-                    shootEmitter.Play();
+                    shootEmitter.Play();                    
                 }
             }
             else

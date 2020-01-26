@@ -197,9 +197,6 @@
             },
             {
                "inputs" : {
-                  "click" : {
-                     "output" : "/actions/default/in/teleport"
-                  },
                   "position" : {
                      "output" : "/actions/default/in/touchpad"
                   }
@@ -209,11 +206,17 @@
             },
             {
                "inputs" : {
-                  "position" : {
-                     "output" : "/actions/default/in/trackpadsnapturnvalue"
+                  "east" : {
+                     "output" : "/actions/default/in/snapturnright"
+                  },
+                  "west" : {
+                     "output" : "/actions/default/in/snapturnleft"
                   }
                },
-               "mode" : "trackpad",
+               "mode" : "dpad",
+               "parameters" : {
+                  "sub_mode" : "click"
+               },
                "path" : "/user/hand/right/input/trackpad"
             }
          ]

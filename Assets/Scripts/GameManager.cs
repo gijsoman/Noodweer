@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
     private void OnLevelWasLoaded(int level)
     {
         //reset the vrplayer to the center.
-        if (level == 1)
+        if (level == 2)
         {
             Time.timeScale = 1;
             VRplayer.GetComponent<CharacterController>().enabled = false;
