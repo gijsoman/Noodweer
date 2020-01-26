@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
             FadedIn = true;            
             FadeToClear();
             IntroPlaying = false;
+            VRplayer.GetComponent<VRWalking>().enabled = true;
         }
 
         if (Input.GetKeyDown(KeyCode.N))
