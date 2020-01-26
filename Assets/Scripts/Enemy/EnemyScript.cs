@@ -30,15 +30,12 @@ public class EnemyScript : MonoBehaviour
             IStabbed?.Invoke();            
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void DoDie()
     {
-        if(collision.gameObject.name == "Bullet_45mm_Bullet(Clone)" && !GameManager.Instance.playerDied && !GameManager.Instance.enemyDied)
-        {
-            if(alive)
-                anim.SetTrigger("Death");
-            alive = false;
-            IDied?.Invoke();
-        }
+        if (alive)
+            anim.SetTrigger("Death");
+        alive = false;
+        IDied?.Invoke();
     }
 
     private void OnTriggerEnter(Collider other)
