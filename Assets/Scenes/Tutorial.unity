@@ -1569,7 +1569,19 @@ MonoBehaviour:
   WalkingAction:
     actionPath: /actions/default/in/TouchPad
     needsReinit: 0
-  VrWalking: {fileID: 659092757}
+  RotateRight:
+    actionPath: /actions/default/in/SnapTurnRight
+    needsReinit: 0
+  RotateLeft:
+    actionPath: /actions/default/in/SnapTurnLeft
+    needsReinit: 0
+  GrabGrip:
+    actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
+  playerWalked: 0
+  playerTurnedRight: 0
+  playerTurnedLeft: 0
+  playerGrabbedGun: 0
 --- !u!4 &90906519
 Transform:
   m_ObjectHideFlags: 0
