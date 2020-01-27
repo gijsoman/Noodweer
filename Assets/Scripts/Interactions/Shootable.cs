@@ -7,6 +7,11 @@ using FMODUnity;
 public class Shootable : MonoBehaviour
 {
     public SteamVR_Action_Boolean Shoot;
+
+    public SnapTurn snapTurn;
+    public SteamVR_Action_Boolean turnRight;
+    public SteamVR_Action_Boolean turnLeft;
+    
     public Transform EndOfBarrel;
     public GameObject muzzleFlashPrefab;
 
@@ -49,5 +54,14 @@ public class Shootable : MonoBehaviour
                 shootEmitter.Play();
             }
         }
+
+        //if (turnRight.changed)
+        //{
+        //    snapTurn.RotatePlayer(snapTurn.snapAngle);
+        //}
+        //if (turnLeft.changed)
+        //{
+        //    snapTurn.RotatePlayer(-snapTurn.snapAngle);
+        //}
     }
 }

@@ -1551,7 +1551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &90906518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1706,6 +1706,13 @@ MonoBehaviour:
   Shoot:
     actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
+  snapTurn: {fileID: 954544591}
+  turnRight:
+    actionPath: /actions/default/in/SnapTurnRight
+    needsReinit: 0
+  turnLeft:
+    actionPath: /actions/default/in/SnapTurnLeft
+    needsReinit: 0
   EndOfBarrel: {fileID: 2025368850}
   muzzleFlashPrefab: {fileID: 1782395880954752, guid: e802c9c5b472d2345a808aca4bc81014,
     type: 3}
@@ -1754,7 +1761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activateActionSetOnAttach:
-    actionSetPath: 
+    actionSetPath: /actions/default
   hideHandOnAttach: 0
   hideSkeletonOnAttach: 0
   hideControllerOnAttach: 0
@@ -9817,6 +9824,18 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &954544591 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114000010547881750, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1298158906}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7434e43635fb2924583f5e0f2fb6ed3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1017245884
 GameObject:
   m_ObjectHideFlags: 0

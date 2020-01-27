@@ -84,10 +84,12 @@ namespace Valve.VR.InteractionSystem
                 if (leftHandTurnLeft || rightHandTurnLeft)
                 {
                     RotatePlayer(-snapAngle);
+                    Debug.Log("SnapLeft");
                 }
                 else if (leftHandTurnRight || rightHandTurnRight)
                 {
                     RotatePlayer(snapAngle);
+                    Debug.Log("SnapRight");
                 }
             }
         }
