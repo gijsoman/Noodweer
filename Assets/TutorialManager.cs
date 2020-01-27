@@ -10,6 +10,8 @@ public class TutorialManager : MonoBehaviour
     public Hand lefthand;
     public Hand righthand;
     public GameObject Handgun;
+    public GameObject GunHighlighter;
+    public GameObject SceneSwitcher;
 
     public SteamVR_Action_Vector2 walk;
     public SteamVR_Action_Boolean TurnRight;
@@ -57,6 +59,7 @@ public class TutorialManager : MonoBehaviour
             CancelHint(TurnLeft);
             tutState = TutorialState.Grabbing;
             ShowHint (righthand, Grab, "Druk op de grip button om je wapen op te pakken (werkt ook met links)");
+            GunHighlighter.SetActive(true);
         }
 
         if (Grab.changed && tutState == TutorialState.Grabbing )
@@ -64,6 +67,7 @@ public class TutorialManager : MonoBehaviour
             if (lefthand.currentAttachedObject == Handgun || righthand.currentAttachedObject == Handgun)
             {
                 CancelHint(Grab);
+                GunHighlighter.SetActive(false);
                 tutState = TutorialState.Shooting;
                 if (righthand.currentAttachedObject == Handgun)
                 {
@@ -93,6 +97,7 @@ public class TutorialManager : MonoBehaviour
         if (Grab.changed && tutState == TutorialState.Holstering)
         {
             CancelHint(Grab);
+            SceneSwitcher.SetActive(true);
         }
        
     }
@@ -143,7 +148,7 @@ public class TutorialManager : MonoBehaviour
                     //Haptic pulse for a few seconds
                     pulsed = true;
 
-                    hand.TriggerHapticPulse(500);
+                    hand.TriggerHapticPulse(1000);
                 }
             }
             else if (!showHint && isShowingHint)

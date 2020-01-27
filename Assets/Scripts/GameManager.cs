@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        VRplayer = GameObject.Find("VRPlayer");
         HandGunWield = GameObject.Find("Handgun").GetComponent<Wieldable>();
         HandGunShootable = GameObject.Find("Handgun").GetComponent<Shootable>();
         if (PlayIntro)
@@ -117,14 +118,11 @@ public class GameManager : MonoBehaviour
     private void OnLevelWasLoaded(int level)
     {
         //reset the vrplayer to the center.
-        if (level == 2)
-        {
-            Time.timeScale = 1;
-            VRplayer.GetComponent<CharacterController>().enabled = false;
-            VRplayer.GetComponent<VRWalking>().enabled = false;
-            VRplayer.transform.position = new Vector3(0, VRplayer.transform.position.y, 0);
-            VRplayer.transform.eulerAngles = new Vector3(0, 0, 0);
-        }
+        Time.timeScale = 1;
+        VRplayer.GetComponent<CharacterController>().enabled = false;
+        VRplayer.GetComponent<VRWalking>().enabled = false;
+        VRplayer.transform.position = new Vector3(0, VRplayer.transform.position.y, 0);
+        VRplayer.transform.eulerAngles = new Vector3(0, 0, 0);
     }
 
     private void OnDestroy()

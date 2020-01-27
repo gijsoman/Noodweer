@@ -6,6 +6,7 @@ public class HolsterSlot : MonoBehaviour
 {
     public ItemType HolsterItemType;
     public GameObject HolsteredItem;
+    public GameObject HolsterHighlighter;
 
     //is public to check stuff in inspec
     public Holsterable currentHolsterableItem;
@@ -39,16 +40,25 @@ public class HolsterSlot : MonoBehaviour
             //check how we can fix the positioning.
             HolsteredItem.transform.localPosition = currentHolsterableItem.HolsteredOffset.localPosition;
             HolsteredItem.transform.localRotation = currentHolsterableItem.HolsteredOffset.localRotation;
+
+            currentHolsterableItem = null;
+            HolsterHighlighter.SetActive(false);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (vrPositioned)
-        { 
-            currentHolsterableItem = other.GetComponent<Holsterable>();
+        {
+            if (HolsteredItem == null)
+            {
+                currentHolsterableItem = other.GetComponent<Holsterable>();
+            }
             if (currentHolsterableItem != null && currentHolsterableItem.Type == HolsterItemType)
+            {
+                HolsterHighlighter.SetActive(true);
                 currentHolsterableItem.wieldable.OnDetachObject += HolsterItem;
+            }
         }
     }
 
@@ -58,6 +68,7 @@ public class HolsterSlot : MonoBehaviour
         {
             if (currentHolsterableItem != null)
             {
+                HolsterHighlighter.SetActive(false);
                 currentHolsterableItem.wieldable.OnDetachObject -= HolsterItem;
                 currentHolsterableItem = null;
             }
