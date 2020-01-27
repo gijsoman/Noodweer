@@ -7883,6 +7883,13 @@ MonoBehaviour:
   Shoot:
     actionPath: /actions/Shooter/in/Shoot
     needsReinit: 0
+  snapTurn: {fileID: 0}
+  turnRight:
+    actionPath: 
+    needsReinit: 0
+  turnLeft:
+    actionPath: 
+    needsReinit: 0
   EndOfBarrel: {fileID: 928453233}
   muzzleFlashPrefab: {fileID: 1782395880954752, guid: e802c9c5b472d2345a808aca4bc81014,
     type: 3}

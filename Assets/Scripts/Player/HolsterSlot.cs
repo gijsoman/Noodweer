@@ -29,13 +29,17 @@ public class HolsterSlot : MonoBehaviour
         if (HolsteredItem == null && currentHolsterableItem != null)
         {
             HolsteredItem = currentHolsterableItem.gameObject;
-            currentHolsterableItem.rb.isKinematic = true;
-            HolsteredItem.transform.SetParent(transform);
+            currentHolsterableItem.rb.isKinematic = true;            
 
             //Set the function for unholstering
             Wieldable wieldable = HolsteredItem.GetComponent<Wieldable>();
             if (wieldable != null)
                 wieldable.OnAttachObject += UnHolsterItem;
+
+            //detach object from the hand
+            wieldable.UnWieldItem(wieldable.handWieldedTo);
+
+            HolsteredItem.transform.SetParent(transform);
 
             //check how we can fix the positioning.
             HolsteredItem.transform.localPosition = currentHolsterableItem.HolsteredOffset.localPosition;

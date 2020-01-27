@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 using FMODUnity;
 
 public class GameManager : MonoBehaviour
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
         if (PlayIntro)
         {
             VRplayer.GetComponent<VRWalking>().enabled = false;
+            VRplayer.GetComponentInChildren<SnapTurn>().enabled = false;          
             HandGunWield.allowedToWield = false;
             HandGunShootable.allowedToShoot = false;            
             IntroPlaying = true;
@@ -71,6 +73,7 @@ public class GameManager : MonoBehaviour
             FadeToClear();
             IntroPlaying = false;
             VRplayer.GetComponent<VRWalking>().enabled = true;
+            VRplayer.GetComponentInChildren<SnapTurn>().enabled = true;
             HandGunWield.allowedToWield = true;
             HandGunShootable.allowedToShoot = true;
         }

@@ -21,6 +21,8 @@ public class Wieldable : MonoBehaviour
     [HideInInspector]
     public Rigidbody rb;
 
+    public Hand handWieldedTo;
+
     public bool allowedToWield = true;
 
     private void Awake()
@@ -35,6 +37,7 @@ public class Wieldable : MonoBehaviour
         if (startingGrabType == GrabTypes.Grip && allowedToWield)
         {
             OnAttachObject?.Invoke();
+            handWieldedTo = hand;
             hand.AttachObject(gameObject, startingGrabType, attachmentFlags, attachmentOffset);
             rb.isKinematic = true;       
         }
@@ -46,12 +49,14 @@ public class Wieldable : MonoBehaviour
 
         if (startingGrabType == GrabTypes.Grip)
         {
-            hand.DetachObject(gameObject, false);
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-            rb.isKinematic = false;
             OnDetachObject?.Invoke();
         }
+    }
+
+    public void UnWieldItem(Hand hand)
+    {
+        hand.DetachObject(gameObject, false);
+        handWieldedTo = null;
     }
 
     private void OnDestroy()
