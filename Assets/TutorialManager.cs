@@ -9,6 +9,7 @@ public class TutorialManager : MonoBehaviour
 
     public Hand lefthand;
     public Hand righthand;
+    public GameObject Handgun;
 
     public SteamVR_Action_Vector2 walk;
     public SteamVR_Action_Boolean TurnRight;
@@ -58,17 +59,20 @@ public class TutorialManager : MonoBehaviour
             ShowHint (righthand, Grab, "Druk op de grip button om je wapen op te pakken (werkt ook met links)");
         }
 
-        if (Grab.changed && tutState == TutorialState.Grabbing)
-        {
-            CancelHint(Grab);
-            tutState = TutorialState.Shooting;
-            if (righthand.AttachedObjects != null)
+        if (Grab.changed && tutState == TutorialState.Grabbing )
+        {            
+            if (lefthand.currentAttachedObject == Handgun || righthand.currentAttachedObject == Handgun)
             {
-                ShowHint(lefthand, Shoot, "Druk op de trigger om te schieten");
-            }
-            else if (lefthand.AttachedObjects != null)
-            {
-                ShowHint(righthand, Shoot, "Druk op de trigger om te schieten");
+                CancelHint(Grab);
+                tutState = TutorialState.Shooting;
+                if (righthand.currentAttachedObject == Handgun)
+                {
+                    ShowHint(righthand, Shoot, "Druk op de trigger om te schieten");
+                }
+                else if (lefthand.currentAttachedObject == Handgun)
+                {
+                    ShowHint(lefthand, Shoot, "Druk op de trigger om te schieten");
+                }
             }
         }
 
@@ -76,11 +80,11 @@ public class TutorialManager : MonoBehaviour
         {
             CancelHint(Shoot);
             tutState = TutorialState.Holstering;
-            if (righthand.AttachedObjects != null)
+            if (righthand.currentAttachedObject == Handgun)
             {
                 ShowHint(righthand, Grab, "Druk op de gripbutton in de buurt van je holster om je wapen op te bergen");
             }
-            else if (lefthand.AttachedObjects != null)
+            else if (lefthand.currentAttachedObject == Handgun)
             {
                 ShowHint(lefthand, Grab, "Druk op de gripbutton in de buurt van je holster om je wapen op te bergen");
             }
