@@ -130,6 +130,7 @@ public class GameManager : MonoBehaviour
         {
             ResetPlayer();
             VRplayer.GetComponent<CharacterController>().enabled = false;
+            VRplayer.GetComponentInChildren<SnapTurn>().enabled = false;
         }
     }
 
