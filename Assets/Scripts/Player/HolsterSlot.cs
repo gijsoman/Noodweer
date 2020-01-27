@@ -27,7 +27,6 @@ public class HolsterSlot : MonoBehaviour
     {
         if (HolsteredItem == null && currentHolsterableItem != null)
         {
-            Debug.Log("Holstered!");
             HolsteredItem = currentHolsterableItem.gameObject;
             currentHolsterableItem.rb.isKinematic = true;
             HolsteredItem.transform.SetParent(transform);

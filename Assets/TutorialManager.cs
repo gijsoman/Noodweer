@@ -11,21 +11,86 @@ public class TutorialManager : MonoBehaviour
     public Hand righthand;
 
     public SteamVR_Action_Vector2 walk;
+    public SteamVR_Action_Boolean TurnRight;
+    public SteamVR_Action_Boolean TurnLeft;
+    public SteamVR_Action_Boolean Shoot;
+    public SteamVR_Action_Boolean Grab;
 
     private Coroutine hintCoroutine = null;
 
+    enum TutorialState
+    {
+        Walking,
+        TurningRight,
+        TurningLeft,
+        Grabbing,
+        Shooting,
+        Holstering
+    }
+    private TutorialState tutState;
+
     private void Start()
     {
-        player = Player.instance;
+       player = Player.instance;
        ShowHint(lefthand, walk, "Raak de touchpad aan om te lopen");
     }
 
     private void Update()
     {
-        if (walk.changed)
+        if (walk.changed && tutState == TutorialState.Walking)
         {
             CancelHint(walk);
+            tutState = TutorialState.TurningRight;
+            ShowHint(righthand, TurnRight, "Druk de rechterkant van de touchpad in om naar rechts te draaien");
         }
+
+        if (TurnRight.changed && tutState == TutorialState.TurningRight)
+        {
+            CancelHint(TurnRight);
+            tutState = TutorialState.TurningLeft;
+            ShowHint(righthand, TurnLeft, "Druk de linkerkant van de touchpad in om naar links te draaien");
+        }
+
+        if (TurnLeft.changed && tutState == TutorialState.TurningLeft)
+        {
+            CancelHint(TurnLeft);
+            tutState = TutorialState.Grabbing;
+            ShowHint (righthand, Grab, "Druk op de grip button om je wapen op te pakken (werkt ook met links)");
+        }
+
+        if (Grab.changed && tutState == TutorialState.Grabbing)
+        {
+            CancelHint(Grab);
+            tutState = TutorialState.Shooting;
+            if (righthand.AttachedObjects != null)
+            {
+                ShowHint(lefthand, Shoot, "Druk op de trigger om te schieten");
+            }
+            else if (lefthand.AttachedObjects != null)
+            {
+                ShowHint(righthand, Shoot, "Druk op de trigger om te schieten");
+            }
+        }
+
+        if (Shoot.changed && tutState == TutorialState.Shooting)
+        {
+            CancelHint(Shoot);
+            tutState = TutorialState.Holstering;
+            if (righthand.AttachedObjects != null)
+            {
+                ShowHint(righthand, Grab, "Druk op de gripbutton in de buurt van je holster om je wapen op te bergen");
+            }
+            else if (lefthand.AttachedObjects != null)
+            {
+                ShowHint(lefthand, Grab, "Druk op de gripbutton in de buurt van je holster om je wapen op te bergen");
+            }
+        }
+
+        if (Grab.changed && tutState == TutorialState.Holstering)
+        {
+            CancelHint(Grab);
+        }
+       
     }
 
     public void ShowHint(Hand hand, ISteamVR_Action_In_Source _action, string hint)
@@ -47,25 +112,6 @@ public class TutorialManager : MonoBehaviour
         }
 
         CancelInvoke("ShowHintCoroutine");
-    }
-
-    private void StopAllHints(ISteamVR_Action_In_Source action)
-    {
-        StopAllCoroutines();
-        bool isShowingHintRight = !string.IsNullOrEmpty(ControllerButtonHints.GetActiveHintText(righthand, action));
-        bool isShowingHintLeft = !string.IsNullOrEmpty(ControllerButtonHints.GetActiveHintText(lefthand, action));
-
-        if (isShowingHintLeft)
-        {
-            Debug.Log("SettingRangeOfmotion");
-            lefthand.SetSkeletonRangeOfMotion(EVRSkeletalMotionRange.WithoutController, 0.1f);
-            ControllerButtonHints.HideAllTextHints(lefthand);
-        }
-        if (isShowingHintRight)
-        {
-            righthand.SetSkeletonRangeOfMotion(EVRSkeletalMotionRange.WithoutController, 0.1f);
-            ControllerButtonHints.HideAllTextHints(righthand);
-        }
     }
 
     private IEnumerator ShowHintCoroutine(Hand hand, ISteamVR_Action_In_Source _action, string hint)

@@ -1569,6 +1569,18 @@ MonoBehaviour:
   walk:
     actionPath: /actions/default/in/TouchPad
     needsReinit: 0
+  TurnRight:
+    actionPath: /actions/default/in/SnapTurnRight
+    needsReinit: 0
+  TurnLeft:
+    actionPath: /actions/default/in/SnapTurnLeft
+    needsReinit: 0
+  Shoot:
+    actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
+  Grab:
+    actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
 --- !u!4 &90906519
 Transform:
   m_ObjectHideFlags: 0
@@ -9675,7 +9687,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.09
+  m_Radius: 0.13
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!43 &1020499621
 Mesh:

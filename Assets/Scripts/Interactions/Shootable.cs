@@ -19,7 +19,6 @@ public class Shootable : MonoBehaviour
     {        
         if (Shoot != null && Shoot.GetStateDown(hand.handType) && allowedToShoot)
         {
-            Debug.Log("Shooting");
             Vector3 forward = EndOfBarrel.transform.TransformDirection(Vector3.right) * 10;
             ObjectPooler.Instance.SpawnFromPool("Bullet", EndOfBarrel.position, Quaternion.LookRotation(forward));
             if (muzzleFlashPrefab != null)
