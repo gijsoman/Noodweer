@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
             HandGunWield.allowedToWield = true;
             HandGunShootable.allowedToShoot = true;
         }
-        else if (!FadedIn)
+        else if (!FadedIn && PlayIntro)
         {
             SteamVR_Fade.View(Color.black, 0);
         }

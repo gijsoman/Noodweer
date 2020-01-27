@@ -2989,7 +2989,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8977f2b7459b2b7418cd232e0bb3d185,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.49
+      value: 19.87
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8977f2b7459b2b7418cd232e0bb3d185,
         type: 3}
@@ -2999,7 +2999,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8977f2b7459b2b7418cd232e0bb3d185,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.04
+      value: 20.19
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8977f2b7459b2b7418cd232e0bb3d185,
         type: 3}
@@ -3649,7 +3649,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.7
   m_Range: 82.04
   m_SpotAngle: 162.6
   m_InnerSpotAngle: 21.80208
@@ -3710,7 +3710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16861a8c0433e424889595b63d278b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: -500
+  Speed: -400
 --- !u!1 &869460644
 GameObject:
   m_ObjectHideFlags: 0
@@ -5208,7 +5208,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0, g: 0.22372484, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.7
   m_Range: 82.04
   m_SpotAngle: 162.6
   m_InnerSpotAngle: 21.80208
@@ -5269,7 +5269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16861a8c0433e424889595b63d278b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 500
+  Speed: 400
 --- !u!1 &1213899985
 GameObject:
   m_ObjectHideFlags: 0
@@ -7724,6 +7724,7 @@ MonoBehaviour:
   attachmentFlags: 44
   attachmentOffset: {fileID: 0}
   rb: {fileID: 0}
+  handWieldedTo: {fileID: 0}
   allowedToWield: 1
 --- !u!54 &1912107764
 Rigidbody:

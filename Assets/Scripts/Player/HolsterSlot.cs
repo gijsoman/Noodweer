@@ -66,6 +66,22 @@ public class HolsterSlot : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (vrPositioned)
+        {
+            if (HolsteredItem == null && currentHolsterableItem == null)
+            {
+                currentHolsterableItem = other.GetComponent<Holsterable>();
+            }
+            if (currentHolsterableItem != null && currentHolsterableItem.Type == HolsterItemType && !HolsterHighlighter.activeInHierarchy)
+            {
+                HolsterHighlighter.SetActive(true);
+                currentHolsterableItem.wieldable.OnDetachObject += HolsterItem;
+            }
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if (vrPositioned)

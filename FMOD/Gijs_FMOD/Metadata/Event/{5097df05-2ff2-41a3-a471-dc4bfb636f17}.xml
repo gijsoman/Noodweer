@@ -174,7 +174,7 @@
 			<value>4200</value>
 		</property>
 		<property name="wetLevel">
-			<value>-23.5</value>
+			<value>-29</value>
 		</property>
 	</object>
 	<object class="PluginEffect" id="{c16fa392-cc7e-46c9-89f3-74cb34a57d2c}">

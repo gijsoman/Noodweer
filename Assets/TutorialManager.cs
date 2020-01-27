@@ -12,6 +12,7 @@ public class TutorialManager : MonoBehaviour
     public GameObject Handgun;
     public GameObject GunHighlighter;
     public GameObject SceneSwitcher;
+    public HolsterSlot GunHolster;
 
     public SteamVR_Action_Vector2 walk;
     public SteamVR_Action_Boolean TurnRight;
@@ -94,7 +95,7 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        if (Grab.changed && tutState == TutorialState.Holstering)
+        if (Grab.changed && tutState == TutorialState.Holstering && GunHolster.HolsteredItem == Handgun)
         {
             CancelHint(Grab);
             SceneSwitcher.SetActive(true);

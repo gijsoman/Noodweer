@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: event:/Weapons/Gun_Kill
   guid: 6260f17c8b663d44aa9a8e747e51a86a
   Banks:
-  - {fileID: 8052293042711135868}
+  - {fileID: 2315086708338283746}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -38,7 +38,7 @@ MonoBehaviour:
   Path: event:/Voice_lines/Godverdomme
   guid: 83f9d761beb8184dab6d3c14e0f04f04
   Banks:
-  - {fileID: 8052293042711135868}
+  - {fileID: 2315086708338283746}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -61,7 +61,7 @@ MonoBehaviour:
   Path: event:/Voice_lines/Ik_Wil_Geen_Hulp
   guid: 4aefc5daa6c76f46addaafd0c60f8376
   Banks:
-  - {fileID: 8052293042711135868}
+  - {fileID: 2315086708338283746}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -84,7 +84,7 @@ MonoBehaviour:
   Path: event:/Voice_lines/Schiet_Godverdomme
   guid: 05df9750f22fa341a471dc4bfb636f17
   Banks:
-  - {fileID: 8052293042711135868}
+  - {fileID: 2315086708338283746}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -107,7 +107,7 @@ MonoBehaviour:
   Path: event:/Voice_lines/Ik_Wil_Niet_Meer
   guid: a563d62093a6f549841822a27feaf5c3
   Banks:
-  - {fileID: 8052293042711135868}
+  - {fileID: 2315086708338283746}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -148,7 +148,7 @@ MonoBehaviour:
   Path: event:/Voice_lines/Ja_Precies
   guid: 5a5bb042a69f174aa6de1224b82adb03
   Banks:
-  - {fileID: 8052293042711135868}
+  - {fileID: 2315086708338283746}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -170,11 +170,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/Gijs_FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637154681135061750
+  lastModified: 637157320042205008
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1534
+    Value: 1584
   Exists: 1
 --- !u!114 &-185286600367764856
 MonoBehaviour:
@@ -191,7 +191,7 @@ MonoBehaviour:
   Path: event:/Voice_lines/Schiet
   guid: c0e7d8b0f4d35f4a8a65a934f45f2f45
   Banks:
-  - {fileID: 8052293042711135868}
+  - {fileID: 2315086708338283746}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -698962807637782248}
-  - {fileID: 8052293042711135868}
+  - {fileID: 2315086708338283746}
   EditorEvents:
   - {fileID: 2990376973922415135}
   - {fileID: 435692140417497498}
@@ -234,10 +234,10 @@ MonoBehaviour:
   - {fileID: 6845572888889872168}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 8052293042711135868}
+  - {fileID: 2315086708338283746}
   StringsBanks:
   - {fileID: -698962807637782248}
-  stringsBankWriteTime: 637154681135061750
+  stringsBankWriteTime: 637157320042205008
   cacheVersion: 3
 --- !u!114 &435692140417497498
 MonoBehaviour:
@@ -254,9 +254,9 @@ MonoBehaviour:
   Path: event:/Weapons/Gun_Shot
   guid: 20512c74d2e1e940b8cf8de93f9846a4
   Banks:
-  - {fileID: 8052293042711135868}
+  - {fileID: 2315086708338283746}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
   Path: event:/Weapons/Stabbed
   guid: 9a4656f7780def4ab480579ef58d27fe
   Banks:
-  - {fileID: 8052293042711135868}
+  - {fileID: 2315086708338283746}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -285,6 +285,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 11515
+--- !u!114 &2315086708338283746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Gijs_FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637157320042155390
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &2756527039552733621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,7 +336,7 @@ MonoBehaviour:
   Path: event:/Voice_lines/Kom_Dan
   guid: 1d0b93a0aeea20468473c916e67d3778
   Banks:
-  - {fileID: 8052293042711135868}
+  - {fileID: 2315086708338283746}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -341,14 +359,14 @@ MonoBehaviour:
   Path: event:/Ambience/Intro_Police
   guid: 5997eed83a6f4948affdc72e02e9d40a
   Banks:
-  - {fileID: 8052293042711135868}
+  - {fileID: 2315086708338283746}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 147937
+  Length: 206218
 --- !u!114 &3565875476519870581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,7 +400,7 @@ MonoBehaviour:
   Path: event:/Voice_lines/Mik_Hier
   guid: 6d2807ea8f3fc94ab5b9217e083f82c2
   Banks:
-  - {fileID: 8052293042711135868}
+  - {fileID: 2315086708338283746}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -405,7 +423,7 @@ MonoBehaviour:
   Path: event:/Voice_lines/Werk_Mee
   guid: 213c661f008053439bc3172015699cef
   Banks:
-  - {fileID: 8052293042711135868}
+  - {fileID: 2315086708338283746}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -428,7 +446,7 @@ MonoBehaviour:
   Path: event:/Voice_lines/Je_Durft_Niet
   guid: 398b63681bbc4344833e892a0087d52c
   Banks:
-  - {fileID: 8052293042711135868}
+  - {fileID: 2315086708338283746}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -451,7 +469,7 @@ MonoBehaviour:
   Path: event:/Voice_lines/Frustratie
   guid: bb07c5617ad20948a113512f84711a00
   Banks:
-  - {fileID: 8052293042711135868}
+  - {fileID: 2315086708338283746}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -474,7 +492,7 @@ MonoBehaviour:
   Path: event:/Voice_lines/Schiet_Dan
   guid: fb595cf86c808c49a91e28e29de138ca
   Banks:
-  - {fileID: 8052293042711135868}
+  - {fileID: 2315086708338283746}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -497,7 +515,7 @@ MonoBehaviour:
   Path: event:/Voice_lines/Nee_Schiet
   guid: 78a2cf6af087b441b38fde28a0eb1030
   Banks:
-  - {fileID: 8052293042711135868}
+  - {fileID: 2315086708338283746}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -522,4 +540,4 @@ MonoBehaviour:
   lastModified: 637154681135017109
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0

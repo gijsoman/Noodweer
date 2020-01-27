@@ -39,7 +39,8 @@ public class Wieldable : MonoBehaviour
             OnAttachObject?.Invoke();
             handWieldedTo = hand;
             hand.AttachObject(gameObject, startingGrabType, attachmentFlags, attachmentOffset);
-            rb.isKinematic = true;       
+            rb.isKinematic = true;
+            OnAttachObject = null;
         }
     }
 
@@ -57,6 +58,7 @@ public class Wieldable : MonoBehaviour
     {
         hand.DetachObject(gameObject, false);
         handWieldedTo = null;
+        OnDetachObject = null;
     }
 
     private void OnDestroy()

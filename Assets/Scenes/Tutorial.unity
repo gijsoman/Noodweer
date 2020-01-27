@@ -1551,7 +1551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &90906518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1569,6 +1569,7 @@ MonoBehaviour:
   Handgun: {fileID: 101387160}
   GunHighlighter: {fileID: 173931596}
   SceneSwitcher: {fileID: 1971982018}
+  GunHolster: {fileID: 1017245886}
   walk:
     actionPath: /actions/default/in/TouchPad
     needsReinit: 0
@@ -1814,6 +1815,7 @@ MonoBehaviour:
   attachmentFlags: 44
   attachmentOffset: {fileID: 0}
   rb: {fileID: 0}
+  handWieldedTo: {fileID: 0}
   allowedToWield: 1
 --- !u!114 &101387168
 MonoBehaviour:

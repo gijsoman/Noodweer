@@ -165,7 +165,7 @@
 	<object class="MixerBusFader" id="{685813de-dcc5-4e17-b734-5b6561be6bf4}" />
 	<object class="SFXReverbEffect" id="{58ee0ad2-d5d2-4a17-82ed-a5e031dcddd9}">
 		<property name="decayTime">
-			<value>1600</value>
+			<value>2000</value>
 		</property>
 		<property name="lowShelfFrequency">
 			<value>120</value>
@@ -174,7 +174,7 @@
 			<value>4200</value>
 		</property>
 		<property name="wetLevel">
-			<value>-23.5</value>
+			<value>-38</value>
 		</property>
 	</object>
 	<object class="PluginEffect" id="{2da008c8-9112-4601-b8c6-66886a10c744}">

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{b9561fa3-b699-47e7-bcc7-58857e174739}">
+		<property name="assetPath">
+			<value>Police_Ambience_Intro_v3.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>4</value>
+		</property>
+		<property name="length">
+			<value>88.500249433106575</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8c497001-48e8-44ee-a8b8-273b067df717}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -101,13 +101,9 @@
 		</relationship>
 		<relationship name="sounds">
 			<destination>{ed0d0f96-c864-49be-8795-d2a9465313ee}</destination>
-			<destination>{13124f40-34be-44ff-8027-d0cd814acdf8}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{f4253192-ae7e-4c2a-bc0b-0a060d8403fa}">
-		<property name="volume">
-			<value>2</value>
-		</property>
 		<property name="name">
 			<value>Schiet!</value>
 		</property>
@@ -151,11 +147,6 @@
 			<destination>{1547a575-b6fb-4f2b-89c4-acda1c256d0d}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{13124f40-34be-44ff-8027-d0cd814acdf8}">
-		<relationship name="audioFile">
-			<destination>{1ca94ba0-fa9f-4374-b2da-7511c2e05104}</destination>
-		</relationship>
-	</object>
 	<object class="MixerBusEffectChain" id="{372afdb5-27a6-4812-9e41-012a8391b9fb}">
 		<relationship name="effects">
 			<destination>{81a7e412-e613-4b55-b279-c5b6a4fba423}</destination>
@@ -174,7 +165,7 @@
 			<value>4200</value>
 		</property>
 		<property name="wetLevel">
-			<value>-23.5</value>
+			<value>-29</value>
 		</property>
 	</object>
 	<object class="PluginEffect" id="{cf25d135-6f3c-44b1-b893-ca284a8a478f}">

@@ -100,7 +100,6 @@
 			<destination>{6f987526-15ea-45c6-9210-e53a3e746c26}</destination>
 		</relationship>
 		<relationship name="sounds">
-			<destination>{7ac07957-8778-481b-a472-d38b32c61052}</destination>
 			<destination>{e49e8d05-b131-4d4a-b11b-7d7a6e46af4c}</destination>
 			<destination>{d5af979f-8287-4d42-9de1-104bc9007022}</destination>
 		</relationship>
@@ -147,11 +146,6 @@
 			<value>3</value>
 		</property>
 	</object>
-	<object class="SingleSound" id="{7ac07957-8778-481b-a472-d38b32c61052}">
-		<relationship name="audioFile">
-			<destination>{209cc623-9444-4fae-9366-87fb3df60ee0}</destination>
-		</relationship>
-	</object>
 	<object class="SingleSound" id="{e49e8d05-b131-4d4a-b11b-7d7a6e46af4c}">
 		<relationship name="audioFile">
 			<destination>{2c211c4a-4334-4197-bab4-98405bcffa95}</destination>
@@ -171,7 +165,7 @@
 	<object class="MixerBusFader" id="{671bd94e-385f-4a4c-97fe-de79798fb930}" />
 	<object class="SFXReverbEffect" id="{cf3e46f4-0703-423c-90d1-38214c2ed300}">
 		<property name="decayTime">
-			<value>1600</value>
+			<value>2100</value>
 		</property>
 		<property name="lowShelfFrequency">
 			<value>120</value>
@@ -180,7 +174,7 @@
 			<value>4200</value>
 		</property>
 		<property name="wetLevel">
-			<value>-23.5</value>
+			<value>-29</value>
 		</property>
 	</object>
 	<object class="PluginEffect" id="{57252e03-556a-4e64-b315-8ee607f03f6c}">

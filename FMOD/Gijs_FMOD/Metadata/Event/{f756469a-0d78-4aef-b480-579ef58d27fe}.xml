@@ -73,7 +73,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{4612ecb5-7fbd-4629-93d5-b3b07061e5e3}">
 		<property name="volume">
-			<value>5.5</value>
+			<value>4</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{8128e3b5-3be2-41ad-9caa-35e0db60c55e}</destination>
@@ -131,6 +131,7 @@
 	<object class="MixerBusEffectChain" id="{fe1f5bd6-0b47-44a8-9a57-eb19768f2742}">
 		<relationship name="effects">
 			<destination>{494684e6-d7b8-4d9d-8a03-e6a546d523ed}</destination>
+			<destination>{abbeab24-7ac9-418e-8254-2377de4e5671}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{52c4dec6-1622-4970-a77f-fb5ef6a05e53}" />
@@ -155,6 +156,26 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{494684e6-d7b8-4d9d-8a03-e6a546d523ed}" />
+	<object class="MultibandEqEffect" id="{abbeab24-7ac9-418e-8254-2377de4e5671}">
+		<property name="filterTypeA">
+			<value>5</value>
+		</property>
+		<property name="filterTypeB">
+			<value>9</value>
+		</property>
+		<property name="frequencyA">
+			<value>65.1519775</value>
+		</property>
+		<property name="frequencyB">
+			<value>111.655685</value>
+		</property>
+		<property name="qualityA">
+			<value>0.497689635</value>
+		</property>
+		<property name="gainB">
+			<value>-6.72413635</value>
+		</property>
+	</object>
 	<object class="Plugin" id="{04e2a30c-1cff-4658-9ea0-9ea37fd63d1e}">
 		<property name="identifier">
 			<value>Resonance Audio Source</value>
