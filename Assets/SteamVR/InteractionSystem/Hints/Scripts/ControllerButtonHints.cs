@@ -406,7 +406,7 @@ namespace Valve.VR.InteractionSystem
 
 				if ( hintInfo.Value.distanceFromCenter > maxDistanceFromCenter )
 				{
-					maxDistanceFromCenter = hintInfo.Value.distanceFromCenter;
+					maxDistanceFromCenter = hintInfo.Value.distanceFromCenter + 5;
 				}
 			}
 

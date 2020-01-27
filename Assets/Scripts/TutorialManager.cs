@@ -140,7 +140,7 @@ public class TutorialManager : MonoBehaviour
             if (showHint)
             {
                 if (!isShowingHint)
-                {
+                {                    
                     ControllerButtonHints.ShowTextHint(hand, _action, hint);
                     prevBreakTime = Time.time;
                     prevHapticPulseTime = Time.time;
