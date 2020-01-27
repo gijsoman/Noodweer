@@ -27,6 +27,11 @@ public class ObjectPooler : MonoBehaviour
 
     private void Start()
     {
+        SpawnPoolObjects();
+    }
+
+    private void SpawnPoolObjects()
+    {
         PoolDictionary = new Dictionary<string, Queue<GameObject>>();
 
         foreach (Pool pool in Pools)
@@ -75,5 +80,10 @@ public class ObjectPooler : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         Bullet.SetActive(false);
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        SpawnPoolObjects();
     }
 }

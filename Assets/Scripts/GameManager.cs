@@ -44,9 +44,9 @@ public class GameManager : MonoBehaviour
         HandGunShootable = GameObject.Find("Handgun").GetComponent<Shootable>();
         if (PlayIntro)
         {
+            VRplayer.GetComponent<VRWalking>().enabled = false;
             HandGunWield.allowedToWield = false;
-            HandGunShootable.allowedToShoot = false;
-            SteamVR_Fade.View(Color.black, 0);
+            HandGunShootable.allowedToShoot = false;            
             IntroPlaying = true;
         }
         else
@@ -59,18 +59,24 @@ public class GameManager : MonoBehaviour
             Enemy.IDied += EnemyKilledSequence;
             Enemy.IStabbed += PlayerKilledSequence;
         }
+
+        ResetPlayer();
     }
 
     private void Update()
-    {        
-        if(!FadedIn && PoliceIntroPlaybackPosition() >= 40000)
+    {
+        if (!FadedIn && PoliceIntroPlaybackPosition() >= 40000)
         {
-            FadedIn = true;            
+            FadedIn = true;
             FadeToClear();
             IntroPlaying = false;
             VRplayer.GetComponent<VRWalking>().enabled = true;
             HandGunWield.allowedToWield = true;
             HandGunShootable.allowedToShoot = true;
+        }
+        else if (!FadedIn)
+        {
+            SteamVR_Fade.View(Color.black, 0);
         }
 
         if (Input.GetKeyDown(KeyCode.N))
@@ -117,12 +123,21 @@ public class GameManager : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
-        //reset the vrplayer to the center.
+        if (level == 2)
+        {
+            ResetPlayer();
+            VRplayer.GetComponent<CharacterController>().enabled = false;
+        }
+    }
+
+    private void ResetPlayer()
+    {
         Time.timeScale = 1;
         VRplayer.GetComponent<CharacterController>().enabled = false;
         VRplayer.GetComponent<VRWalking>().enabled = false;
         VRplayer.transform.position = new Vector3(0, VRplayer.transform.position.y, 0);
         VRplayer.transform.eulerAngles = new Vector3(0, 0, 0);
+        VRplayer.GetComponent<CharacterController>().enabled = true;
     }
 
     private void OnDestroy()

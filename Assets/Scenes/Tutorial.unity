@@ -1568,6 +1568,7 @@ MonoBehaviour:
   righthand: {fileID: 1267564423}
   Handgun: {fileID: 101387160}
   GunHighlighter: {fileID: 173931596}
+  SceneSwitcher: {fileID: 1971982018}
   walk:
     actionPath: /actions/default/in/TouchPad
     needsReinit: 0
@@ -1703,7 +1704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Shoot:
-    actionPath: /actions/Shooter/in/Shoot
+    actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
   EndOfBarrel: {fileID: 2025368850}
   muzzleFlashPrefab: {fileID: 1782395880954752, guid: e802c9c5b472d2345a808aca4bc81014,
@@ -1753,7 +1754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activateActionSetOnAttach:
-    actionSetPath: /actions/Shooter
+    actionSetPath: 
   hideHandOnAttach: 0
   hideSkeletonOnAttach: 0
   hideControllerOnAttach: 0
@@ -14518,7 +14519,7 @@ MonoBehaviour:
   backgroundColor: {r: 0, g: 0, b: 0, a: 1}
   showGrid: 0
   fadeOutTime: 0.5
-  fadeInTime: 0.5
+  fadeInTime: 0
   postLoadSettleTime: 0
   loadingScreenFadeInTime: 1
   loadingScreenFadeOutTime: 0.25
