@@ -1,100 +1,118 @@
-﻿using UnityEngine;
-using Valve.VR;
+﻿using System.Collections;
+using UnityEngine;
 using Valve.VR.InteractionSystem;
+using Valve.VR;
 
 public class TutorialManager : MonoBehaviour
 {
-    public Hand leftHand;
-    public Hand rightHand;
+    private Player player;
 
-    public SteamVR_Action_Vector2 WalkingAction;
-    public SteamVR_Action_Boolean RotateRight;
-    public SteamVR_Action_Boolean RotateLeft;
-    public SteamVR_Action_Boolean GrabGrip;
+    public Hand lefthand;
+    public Hand righthand;
 
-    public bool playerWalked = false;
-    public bool playerTurnedRight = false;
-    public bool playerTurnedLeft = false;
-    public bool playerGrabbedGun = false;
+    public SteamVR_Action_Vector2 walk;
 
+    private Coroutine hintCoroutine = null;
 
-    enum TutorialState
+    private void Start()
     {
-        Walking,
-        Turning,
-        Grabbing,
-        Holstering
+        player = Player.instance;
+       ShowHint(lefthand, walk, "Raak de touchpad aan om te lopen");
     }
-
-    private TutorialState tutorialState = TutorialState.Walking;
 
     private void Update()
     {
-        if(tutorialState == TutorialState.Walking)
-            HandleWalkingHint();
-
-        if (tutorialState == TutorialState.Turning)
-            HandleSnapTurnHint();
-
-        if (tutorialState == TutorialState.Grabbing)
-            HandleGrabHint();
-    }
-
-    private void HandleWalkingHint()
-    {
-        if (WalkingAction.changed)
-            playerWalked = true;
-
-        if (!playerWalked)
+        if (walk.changed)
         {
-            ControllerButtonHints.ShowTextHint(leftHand, WalkingAction, "Raak de trackpad aan om te lopen", true);
-            leftHand.SetSkeletonRangeOfMotion(EVRSkeletalMotionRange.WithController, 0.1f);
-        }
-        else
-        {
-            ControllerButtonHints.HideAllTextHints(leftHand);
-            leftHand.SetSkeletonRangeOfMotion(EVRSkeletalMotionRange.WithoutController, 0.1f);
-            tutorialState = TutorialState.Turning;
+            CancelHint(walk);
         }
     }
 
-    private void HandleSnapTurnHint()
+    public void ShowHint(Hand hand, ISteamVR_Action_In_Source _action, string hint)
     {
-        if (RotateRight.GetStateDown(SteamVR_Input_Sources.RightHand))
-        {
-            playerTurnedRight = true;
-            ControllerButtonHints.HideTextHint(rightHand, RotateRight);
-        }
-        if (RotateLeft.GetStateDown(SteamVR_Input_Sources.RightHand))
-            playerTurnedLeft = true;
+        CancelHint(_action);
 
-        if (!playerTurnedRight)
+        hintCoroutine = StartCoroutine(ShowHintCoroutine(hand, _action, hint));
+    }
+
+    public void CancelHint(ISteamVR_Action_In_Source _action)
+    {
+        if (hintCoroutine != null)
         {
-            ControllerButtonHints.ShowTextHint(rightHand, RotateRight, "Druk aan de rechterkant van de trackpad om snel naar rechts te draaien", true);
-            rightHand.SetSkeletonRangeOfMotion(EVRSkeletalMotionRange.WithController, 0.1f);
+            ControllerButtonHints.HideTextHint(player.leftHand, _action);
+            ControllerButtonHints.HideTextHint(player.rightHand, _action);
+
+            StopCoroutine(hintCoroutine);
+            hintCoroutine = null;
         }
-        else if (!playerTurnedLeft)
+
+        CancelInvoke("ShowHintCoroutine");
+    }
+
+    private void StopAllHints(ISteamVR_Action_In_Source action)
+    {
+        StopAllCoroutines();
+        bool isShowingHintRight = !string.IsNullOrEmpty(ControllerButtonHints.GetActiveHintText(righthand, action));
+        bool isShowingHintLeft = !string.IsNullOrEmpty(ControllerButtonHints.GetActiveHintText(lefthand, action));
+
+        if (isShowingHintLeft)
         {
-            ControllerButtonHints.ShowTextHint(rightHand, RotateLeft, "Druk aan de linkerkant van de trackpad om snel naar links te draaien", true);
-            rightHand.SetSkeletonRangeOfMotion(EVRSkeletalMotionRange.WithController, 0.1f);
+            Debug.Log("SettingRangeOfmotion");
+            lefthand.SetSkeletonRangeOfMotion(EVRSkeletalMotionRange.WithoutController, 0.1f);
+            ControllerButtonHints.HideAllTextHints(lefthand);
         }
-        else
+        if (isShowingHintRight)
         {
-            ControllerButtonHints.HideAllTextHints(rightHand);
-            rightHand
-.SetSkeletonRangeOfMotion(EVRSkeletalMotionRange.WithoutController, 0.1f);
-            tutorialState = TutorialState.Grabbing;
+            righthand.SetSkeletonRangeOfMotion(EVRSkeletalMotionRange.WithoutController, 0.1f);
+            ControllerButtonHints.HideAllTextHints(righthand);
         }
     }
 
-    private void HandleGrabHint()
+    private IEnumerator ShowHintCoroutine(Hand hand, ISteamVR_Action_In_Source _action, string hint)
     {
-        if (!playerGrabbedGun)
+        float prevBreakTime = Time.time;
+        float prevHapticPulseTime = Time.time;
+
+        while (true)
         {
-            ControllerButtonHints.ShowTextHint(leftHand, GrabGrip, "Druk op de grip button om je wapen op te pakken", true);
-            ControllerButtonHints.ShowTextHint(rightHand, GrabGrip, "Druk op de grip button om je wapen op te pakken", true);
-            rightHand.SetSkeletonRangeOfMotion(EVRSkeletalMotionRange.WithController, 0.1f);
-            leftHand.SetSkeletonRangeOfMotion(EVRSkeletalMotionRange.WithController, 0.1f);
+            bool pulsed = false;
+
+            bool showHint = true;
+            bool isShowingHint = !string.IsNullOrEmpty(ControllerButtonHints.GetActiveHintText(hand, _action));
+            if (showHint)
+            {
+                if (!isShowingHint)
+                {
+                    ControllerButtonHints.ShowTextHint(hand, _action, hint);
+                    prevBreakTime = Time.time;
+                    prevHapticPulseTime = Time.time;
+                }
+
+                if (Time.time > prevHapticPulseTime + 0.05f)
+                {
+                    //Haptic pulse for a few seconds
+                    pulsed = true;
+
+                    hand.TriggerHapticPulse(500);
+                }
+            }
+            else if (!showHint && isShowingHint)
+            {
+                ControllerButtonHints.HideTextHint(hand, walk);
+            }
+            if (Time.time > prevBreakTime + 3.0f)
+            {
+                //Take a break for a few seconds
+                yield return new WaitForSeconds(3.0f);
+                prevBreakTime = Time.time;
+            }
+
+            if (pulsed)
+            {
+                prevHapticPulseTime = Time.time;
+            }
+
+            yield return null;
         }
     }
 }

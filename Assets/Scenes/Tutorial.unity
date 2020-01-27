@@ -1564,24 +1564,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834771e5a5df67b40a7b6df89d080200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHand: {fileID: 311985459}
-  rightHand: {fileID: 1267564423}
-  WalkingAction:
+  lefthand: {fileID: 311985459}
+  righthand: {fileID: 1267564423}
+  walk:
     actionPath: /actions/default/in/TouchPad
     needsReinit: 0
-  RotateRight:
-    actionPath: /actions/default/in/SnapTurnRight
-    needsReinit: 0
-  RotateLeft:
-    actionPath: /actions/default/in/SnapTurnLeft
-    needsReinit: 0
-  GrabGrip:
-    actionPath: /actions/default/in/GrabGrip
-    needsReinit: 0
-  playerWalked: 0
-  playerTurnedRight: 0
-  playerTurnedLeft: 0
-  playerGrabbedGun: 0
 --- !u!4 &90906519
 Transform:
   m_ObjectHideFlags: 0
@@ -10611,11 +10598,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11489144, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: autoSetWithControllerRangeOfMotion
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11494192, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: autoSetWithControllerRangeOfMotion
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1000012112852726, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_IsActive
