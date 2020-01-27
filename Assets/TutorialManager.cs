@@ -35,9 +35,9 @@ public class TutorialManager : MonoBehaviour
 
     private void Start()
     {
-       player = Player.instance;
-        Handgun.GetComponent<Wieldable>().enabled = false;
-       ShowHint(lefthand, walk, "Raak de touchpad aan om te lopen");
+        player = Player.instance;
+        Handgun.SetActive(false);
+        ShowHint(lefthand, walk, "Raak de touchpad aan om te lopen");
     }
 
     private void Update()
@@ -62,7 +62,7 @@ public class TutorialManager : MonoBehaviour
             tutState = TutorialState.Grabbing;
             ShowHint (righthand, Grab, "Druk op de grip button om je wapen op te pakken (werkt ook met links)");
             GunHighlighter.SetActive(true);
-            Handgun.GetComponent<Wieldable>().enabled = true;
+            Handgun.SetActive(true);
         }
 
         if (Grab.changed && tutState == TutorialState.Grabbing )

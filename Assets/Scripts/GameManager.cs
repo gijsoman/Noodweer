@@ -142,6 +142,7 @@ public class GameManager : MonoBehaviour
         VRplayer.transform.position = new Vector3(0, VRplayer.transform.position.y, 0);
         VRplayer.transform.eulerAngles = new Vector3(0, 0, 0);
         VRplayer.GetComponent<CharacterController>().enabled = true;
+        Player.instance.transform.eulerAngles = new Vector3(0, 0, 0);
     }
 
     private void OnDestroy()
