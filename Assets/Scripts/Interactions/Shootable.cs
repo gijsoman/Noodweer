@@ -39,7 +39,7 @@ public class Shootable : MonoBehaviour
             Ray ray = new Ray(EndOfBarrel.position, forward);    
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.gameObject.layer == 9 && !GameManager.Instance.enemyDied)
+                if (hit.collider.gameObject.layer == 9 && !GameManager.Instance.enemyDied && !GameManager.Instance.playerDied)
                 {
                     shootDeathEmitter.Play();                    
                     hit.collider.gameObject.GetComponent<EnemyScript>().DoDie();

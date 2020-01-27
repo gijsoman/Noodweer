@@ -37,10 +37,13 @@ public class EnemyScript : MonoBehaviour
 
     public void DoDie()
     {
-        if (alive)
-            anim.SetTrigger("Death");
-        alive = false;
-        IDied?.Invoke();
+        if (!GameManager.Instance.playerDied)
+        {
+            if (alive)
+                anim.SetTrigger("Death");
+            alive = false;
+            IDied?.Invoke();
+        }
     }
 
     private void OnTriggerEnter(Collider other)

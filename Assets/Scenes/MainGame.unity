@@ -8009,7 +8009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VRplayer: {fileID: 671199017}
   IntroPlaying: 0
-  PlayIntro: 1
+  PlayIntro: 0
   PoliceIntroEventEmitter: {fileID: 2107160695}
   Enemy: {fileID: 1799174834}
   SlowDownFactor: 0.5
