@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{01a26abf-24f0-4032-b418-6de82484e947}">
+		<property name="assetPath">
+			<value>Patrouille.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>13.50530612244898</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8c497001-48e8-44ee-a8b8-273b067df717}</destination>
+		</relationship>
+	</object>
+</objects>
