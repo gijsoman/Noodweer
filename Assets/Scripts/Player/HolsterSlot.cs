@@ -26,10 +26,9 @@ public class HolsterSlot : MonoBehaviour
 
     public void HolsterItem()
     {
-        if (HolsteredItem == null && currentHolsterableItem != null)
+        if (HolsteredItem == null && currentHolsterableItem != null && currentHolsterableItem.Type == HolsterItemType)
         {
-            HolsteredItem = currentHolsterableItem.gameObject;
-            currentHolsterableItem.rb.isKinematic = true;            
+            HolsteredItem = currentHolsterableItem.gameObject;         
 
             //Set the function for unholstering
             Wieldable wieldable = HolsteredItem.GetComponent<Wieldable>();
@@ -45,6 +44,7 @@ public class HolsterSlot : MonoBehaviour
             HolsteredItem.transform.localPosition = currentHolsterableItem.HolsteredOffset.localPosition;
             HolsteredItem.transform.localRotation = currentHolsterableItem.HolsteredOffset.localRotation;
 
+            currentHolsterableItem.rb.isKinematic = true;
             currentHolsterableItem = null;
             HolsterHighlighter.SetActive(false);
         }

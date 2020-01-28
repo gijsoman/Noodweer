@@ -11,8 +11,11 @@ public class TutorialManager : MonoBehaviour
     public Hand righthand;
     public GameObject Handgun;
     public GameObject GunHighlighter;
+    public GameObject Badge;
+    public GameObject Badgehighlighter;
     public GameObject SceneSwitcher;
     public HolsterSlot GunHolster;
+    public HolsterSlot BadgeHolster;
 
     public SteamVR_Action_Vector2 walk;
     public SteamVR_Action_Boolean TurnRight;
@@ -22,6 +25,8 @@ public class TutorialManager : MonoBehaviour
 
     private Coroutine hintCoroutine = null;
 
+    private bool playerShot = false;
+
     enum TutorialState
     {
         Walking,
@@ -29,7 +34,8 @@ public class TutorialManager : MonoBehaviour
         TurningLeft,
         Grabbing,
         Shooting,
-        Holstering
+        Holstering,
+        Badge
     }
     private TutorialState tutState;
 
@@ -37,7 +43,15 @@ public class TutorialManager : MonoBehaviour
     {
         player = Player.instance;
         Handgun.SetActive(false);
+        Badge.SetActive(false);
         ShowHint(lefthand, walk, "Raak de touchpad aan om te lopen");
+        Handgun.GetComponent<Shootable>().Ishot += PlayerShot;
+    }
+
+    private void PlayerShot()
+    {
+        playerShot = true;
+        Handgun.GetComponent<Shootable>().Ishot -= PlayerShot;
     }
 
     private void Update()
@@ -83,8 +97,9 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        if (Shoot.changed && tutState == TutorialState.Shooting)
+        if (Shoot.changed && tutState == TutorialState.Shooting && playerShot)
         {
+            GunHighlighter.SetActive(false);
             CancelHint(Shoot);
             tutState = TutorialState.Holstering;
             if (righthand.currentAttachedObject == Handgun)
@@ -100,9 +115,26 @@ public class TutorialManager : MonoBehaviour
         if (Grab.changed && tutState == TutorialState.Holstering && GunHolster.HolsteredItem == Handgun)
         {
             CancelHint(Grab);
-            SceneSwitcher.SetActive(true);
+            tutState = TutorialState.Badge;            
+            Badge.SetActive(true);
+            Badgehighlighter.SetActive(true);
         }
-       
+
+        if (tutState == TutorialState.Badge)
+        {
+            if (Grab.changed)
+            {
+                if (lefthand.currentAttachedObject == Badge || righthand.currentAttachedObject == Badge)
+                {
+                    Badgehighlighter.SetActive(false);
+                }
+            }
+
+            if (GunHolster.HolsteredItem == Handgun && BadgeHolster.HolsteredItem == Badge)
+            {
+                SceneSwitcher.SetActive(true);
+            }
+        }       
     }
 
     public void ShowHint(Hand hand, ISteamVR_Action_In_Source _action, string hint)

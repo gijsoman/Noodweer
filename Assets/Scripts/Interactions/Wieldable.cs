@@ -34,7 +34,7 @@ public class Wieldable : MonoBehaviour
     {
         GrabTypes startingGrabType = hand.GetGrabStarting();
 
-        if (startingGrabType == GrabTypes.Grip && allowedToWield)
+        if (startingGrabType == GrabTypes.Grip && allowedToWield && hand.currentAttachedObject == null)
         {
             OnAttachObject?.Invoke();
             handWieldedTo = hand;

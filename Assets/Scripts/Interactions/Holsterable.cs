@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public enum ItemType { Gun, Pepper };
+public enum ItemType { Gun, Pepper, Badge };
 
 [RequireComponent(typeof(Wieldable), typeof(Rigidbody))]
 public class Holsterable : MonoBehaviour

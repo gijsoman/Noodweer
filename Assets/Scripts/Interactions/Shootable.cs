@@ -18,12 +18,16 @@ public class Shootable : MonoBehaviour
     public StudioEventEmitter shootEmitter;
     public StudioEventEmitter shootDeathEmitter;
 
+    public delegate void ShootEvent();
+    public ShootEvent Ishot;
+
     public bool allowedToShoot = true;
 
     private void HandAttachedUpdate(Hand hand)
     {        
         if (Shoot != null && Shoot.GetStateDown(hand.handType) && allowedToShoot)
         {
+            Ishot?.Invoke();
             Vector3 forward = EndOfBarrel.transform.TransformDirection(Vector3.right) * 10;
             ObjectPooler.Instance.SpawnFromPool("Bullet", EndOfBarrel.position, Quaternion.LookRotation(forward));
             if (muzzleFlashPrefab != null)
@@ -63,5 +67,10 @@ public class Shootable : MonoBehaviour
         //{
         //    snapTurn.RotatePlayer(-snapTurn.snapAngle);
         //}
+    }
+
+    private void OnDestroy()
+    {
+        Ishot = null;
     }
 }
