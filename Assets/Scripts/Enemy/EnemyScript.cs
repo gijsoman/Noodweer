@@ -20,7 +20,7 @@ public class EnemyScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && alive)
         {
             anim.SetTrigger("Stab");        
         }
